@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GameFramework.Fsm
+namespace OhMyPackage.Fsm
 {
     /// <summary>
     /// 有限状态机状态基类。
@@ -68,7 +68,7 @@ namespace GameFramework.Fsm
             Fsm<T> fsmImplement = (Fsm<T>)fsm;
             if (fsmImplement == null)
             {
-                throw new GameFrameworkException("FSM is invalid.");
+                throw new OhMyPackageException("FSM is invalid.");
             }
 
             fsmImplement.ChangeState<TState>();
@@ -84,17 +84,17 @@ namespace GameFramework.Fsm
             Fsm<T> fsmImplement = (Fsm<T>)fsm;
             if (fsmImplement == null)
             {
-                throw new GameFrameworkException("FSM is invalid.");
+                throw new OhMyPackageException("FSM is invalid.");
             }
 
             if (stateType == null)
             {
-                throw new GameFrameworkException("State type is invalid.");
+                throw new OhMyPackageException("State type is invalid.");
             }
 
             if (!typeof(FsmState<T>).IsAssignableFrom(stateType))
             {
-                throw new GameFrameworkException(Utility.Text.Format("State type '{0}' is invalid.", stateType.FullName));
+                throw new OhMyPackageException(Utility.Text.Format("State type '{0}' is invalid.", stateType.FullName));
             }
 
             fsmImplement.ChangeState(stateType);

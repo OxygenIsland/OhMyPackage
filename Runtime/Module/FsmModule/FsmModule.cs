@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using GameFramework.Core.Framework;
+using OhMyPackage.Core.Framework;
 
-namespace GameFramework.Fsm
+namespace OhMyPackage.Fsm
 {
     /// <summary>
     /// 有限状态机管理器。
@@ -98,7 +98,7 @@ namespace GameFramework.Fsm
         {
             if (ownerType == null)
             {
-                throw new GameFrameworkException("Owner type is invalid.");
+                throw new OhMyPackageException("Owner type is invalid.");
             }
 
             return InternalHasFsm(new TypeNamePair(ownerType));
@@ -125,7 +125,7 @@ namespace GameFramework.Fsm
         {
             if (ownerType == null)
             {
-                throw new GameFrameworkException("Owner type is invalid.");
+                throw new OhMyPackageException("Owner type is invalid.");
             }
 
             return InternalHasFsm(new TypeNamePair(ownerType, name));
@@ -150,7 +150,7 @@ namespace GameFramework.Fsm
         {
             if (ownerType == null)
             {
-                throw new GameFrameworkException("Owner type is invalid.");
+                throw new OhMyPackageException("Owner type is invalid.");
             }
 
             return InternalGetFsm(new TypeNamePair(ownerType));
@@ -177,7 +177,7 @@ namespace GameFramework.Fsm
         {
             if (ownerType == null)
             {
-                throw new GameFrameworkException("Owner type is invalid.");
+                throw new OhMyPackageException("Owner type is invalid.");
             }
 
             return InternalGetFsm(new TypeNamePair(ownerType, name));
@@ -207,7 +207,7 @@ namespace GameFramework.Fsm
         {
             if (results == null)
             {
-                throw new GameFrameworkException("Results is invalid.");
+                throw new OhMyPackageException("Results is invalid.");
             }
 
             results.Clear();
@@ -242,7 +242,7 @@ namespace GameFramework.Fsm
             TypeNamePair typeNamePair = new TypeNamePair(typeof(T), name);
             if (HasFsm<T>(name))
             {
-                throw new GameFrameworkException(Utility.Text.Format("Already exist FSM '{0}'.", typeNamePair));
+                throw new OhMyPackageException(Utility.Text.Format("Already exist FSM '{0}'.", typeNamePair));
             }
 
             Fsm<T> fsm = Fsm<T>.Create(name, owner, states);
@@ -275,7 +275,7 @@ namespace GameFramework.Fsm
             TypeNamePair typeNamePair = new TypeNamePair(typeof(T), name);
             if (HasFsm<T>(name))
             {
-                throw new GameFrameworkException(Utility.Text.Format("Already exist FSM '{0}'.", typeNamePair));
+                throw new OhMyPackageException(Utility.Text.Format("Already exist FSM '{0}'.", typeNamePair));
             }
 
             Fsm<T> fsm = Fsm<T>.Create(name, owner, states);
@@ -302,7 +302,7 @@ namespace GameFramework.Fsm
         {
             if (ownerType == null)
             {
-                throw new GameFrameworkException("Owner type is invalid.");
+                throw new OhMyPackageException("Owner type is invalid.");
             }
 
             return InternalDestroyFsm(new TypeNamePair(ownerType));
@@ -329,7 +329,7 @@ namespace GameFramework.Fsm
         {
             if (ownerType == null)
             {
-                throw new GameFrameworkException("Owner type is invalid.");
+                throw new OhMyPackageException("Owner type is invalid.");
             }
 
             return InternalDestroyFsm(new TypeNamePair(ownerType, name));
@@ -345,7 +345,7 @@ namespace GameFramework.Fsm
         {
             if (fsm == null)
             {
-                throw new GameFrameworkException("FSM is invalid.");
+                throw new OhMyPackageException("FSM is invalid.");
             }
 
             return InternalDestroyFsm(new TypeNamePair(typeof(T), fsm.Name));
@@ -360,7 +360,7 @@ namespace GameFramework.Fsm
         {
             if (fsm == null)
             {
-                throw new GameFrameworkException("FSM is invalid.");
+                throw new OhMyPackageException("FSM is invalid.");
             }
 
             return InternalDestroyFsm(new TypeNamePair(fsm.OwnerType, fsm.Name));

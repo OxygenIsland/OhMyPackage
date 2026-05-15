@@ -51,7 +51,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 
-namespace GameFramework.Localization.SimpleJSON
+namespace OhMyPackage.Localization.SimpleJSON
 {
 	public enum JSONBinaryTag
 	{

@@ -1,4 +1,4 @@
-﻿namespace GameFramework
+﻿namespace OhMyPackage
 {
     public interface ITimerModule
     {

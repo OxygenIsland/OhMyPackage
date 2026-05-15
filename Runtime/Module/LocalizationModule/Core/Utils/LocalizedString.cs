@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     [Serializable]
     public struct LocalizedString

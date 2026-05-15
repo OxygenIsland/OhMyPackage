@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 默认本地化辅助器。

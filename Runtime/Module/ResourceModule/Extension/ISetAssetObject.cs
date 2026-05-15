@@ -1,4 +1,4 @@
-namespace GameFramework.Resource
+namespace OhMyPackage.Resource
 {
     public interface ISetAssetObject : IMemory
     {

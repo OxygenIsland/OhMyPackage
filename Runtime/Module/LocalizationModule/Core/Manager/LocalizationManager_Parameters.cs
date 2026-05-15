@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     public static partial class LocalizationManager
     {

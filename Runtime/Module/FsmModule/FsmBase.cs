@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GameFramework.Fsm
+namespace OhMyPackage.Fsm
 {
     /// <summary>
     /// 有限状态机基类。

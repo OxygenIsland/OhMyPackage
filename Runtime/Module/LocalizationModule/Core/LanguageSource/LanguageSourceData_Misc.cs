@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
 	public partial class LanguageSourceData
 	{

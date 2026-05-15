@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using GameFramework.Core.Framework;
+using OhMyPackage.Core.Framework;
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 音频轨道（类别）。

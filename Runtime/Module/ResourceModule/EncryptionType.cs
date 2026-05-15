@@ -1,4 +1,4 @@
-namespace GameFramework.Resource
+namespace OhMyPackage.Resource
 {
     /// <summary>
     /// 资源模块的加密类型枚举。

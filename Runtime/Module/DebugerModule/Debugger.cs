@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using GameFramework.Core.Framework;
+using OhMyPackage.Core.Framework;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Object = UnityEngine.Object;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 调试器模块。

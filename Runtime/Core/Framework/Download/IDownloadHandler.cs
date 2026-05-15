@@ -6,7 +6,7 @@ using System.IO;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 
-namespace GameFramework.Download
+namespace OhMyPackage.Download
 {
     /// <summary>
     /// HTTP 下载后端接口（策略模式）。

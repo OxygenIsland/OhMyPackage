@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using GameFramework.Core.Framework;
-using GameFramework.ObjectPool;
+using OhMyPackage.Core.Framework;
+using OhMyPackage.ObjectPool;
 using NLog;
 using UnityEngine;
 using YooAsset;
@@ -12,7 +12,7 @@ using YooAsset;
 using WeChatWASM;
 #endif
 
-namespace GameFramework.Resource
+namespace OhMyPackage.Resource
 {
     /// <summary>
     /// 资源管理器。
@@ -538,7 +538,7 @@ namespace GameFramework.Resource
         {
             if (string.IsNullOrEmpty(location))
             {
-                throw new GameFrameworkException("Asset name is invalid.");
+                throw new OhMyPackageException("Asset name is invalid.");
             }
 
             if (string.IsNullOrEmpty(packageName))
@@ -563,7 +563,7 @@ namespace GameFramework.Resource
                 var package = YooAssets.GetPackage(packageName);
                 if (package == null)
                 {
-                    throw new GameFrameworkException($"The package does not exist. Package Name :{packageName}");
+                    throw new OhMyPackageException($"The package does not exist. Package Name :{packageName}");
                 }
 
                 assetInfo = package.GetAssetInfo(location);
@@ -582,7 +582,7 @@ namespace GameFramework.Resource
         {
             if (string.IsNullOrEmpty(location))
             {
-                throw new GameFrameworkException("Asset name is invalid.");
+                throw new OhMyPackageException("Asset name is invalid.");
             }
 
             AssetInfo assetInfo = GetAssetInfo(location, packageName);
@@ -702,7 +702,7 @@ namespace GameFramework.Resource
         {
             if (string.IsNullOrEmpty(location))
             {
-                throw new GameFrameworkException("Asset name is invalid.");
+                throw new OhMyPackageException("Asset name is invalid.");
             }
 
             if (!CheckLocationValid(location, packageName))
@@ -732,7 +732,7 @@ namespace GameFramework.Resource
         {
             if (string.IsNullOrEmpty(location))
             {
-                throw new GameFrameworkException("Asset name is invalid.");
+                throw new OhMyPackageException("Asset name is invalid.");
             }
 
             if (!CheckLocationValid(location, packageName))
@@ -780,7 +780,7 @@ namespace GameFramework.Resource
 
             if (string.IsNullOrEmpty(location))
             {
-                throw new GameFrameworkException("Asset name is invalid.");
+                throw new OhMyPackageException("Asset name is invalid.");
             }
 
             if (!CheckLocationValid(location, packageName))
@@ -833,7 +833,7 @@ namespace GameFramework.Resource
         {
             if (string.IsNullOrEmpty(location))
             {
-                throw new GameFrameworkException("Asset name is invalid.");
+                throw new OhMyPackageException("Asset name is invalid.");
             }
 
             if (!CheckLocationValid(location, packageName))
@@ -877,7 +877,7 @@ namespace GameFramework.Resource
         {
             if (string.IsNullOrEmpty(location))
             {
-                throw new GameFrameworkException("Asset name is invalid.");
+                throw new OhMyPackageException("Asset name is invalid.");
             }
 
             if (!CheckLocationValid(location, packageName))
@@ -940,12 +940,12 @@ namespace GameFramework.Resource
         {
             if (string.IsNullOrEmpty(location))
             {
-                throw new GameFrameworkException("Asset name is invalid.");
+                throw new OhMyPackageException("Asset name is invalid.");
             }
 
             if (loadAssetCallbacks == null)
             {
-                throw new GameFrameworkException("Load asset callbacks is invalid.");
+                throw new OhMyPackageException("Load asset callbacks is invalid.");
             }
 
             if (!CheckLocationValid(location, packageName))
@@ -989,7 +989,7 @@ namespace GameFramework.Resource
                     return;
                 }
 
-                throw new GameFrameworkException(errorMessage);
+                throw new OhMyPackageException(errorMessage);
             }
 
             AssetHandle handle = GetHandleAsync(location, assetType, packageName: packageName);
@@ -1012,7 +1012,7 @@ namespace GameFramework.Resource
                     return;
                 }
 
-                throw new GameFrameworkException(errorMessage);
+                throw new OhMyPackageException(errorMessage);
             }
             else
             {
@@ -1042,12 +1042,12 @@ namespace GameFramework.Resource
         {
             if (string.IsNullOrEmpty(location))
             {
-                throw new GameFrameworkException("Asset name is invalid.");
+                throw new OhMyPackageException("Asset name is invalid.");
             }
 
             if (loadAssetCallbacks == null)
             {
-                throw new GameFrameworkException("Load asset callbacks is invalid.");
+                throw new OhMyPackageException("Load asset callbacks is invalid.");
             }
 
             if (!CheckLocationValid(location, packageName))
@@ -1091,7 +1091,7 @@ namespace GameFramework.Resource
                     return;
                 }
 
-                throw new GameFrameworkException(errorMessage);
+                throw new OhMyPackageException(errorMessage);
             }
 
             AssetHandle handle = GetHandleAsync(location, assetInfo.AssetType, packageName: packageName);
@@ -1114,7 +1114,7 @@ namespace GameFramework.Resource
                     return;
                 }
 
-                throw new GameFrameworkException(errorMessage);
+                throw new OhMyPackageException(errorMessage);
             }
             else
             {
@@ -1136,7 +1136,7 @@ namespace GameFramework.Resource
         {
             if (string.IsNullOrEmpty(location))
             {
-                throw new GameFrameworkException("Asset name is invalid.");
+                throw new OhMyPackageException("Asset name is invalid.");
             }
 
             if (loadAssetUpdateCallback != null)

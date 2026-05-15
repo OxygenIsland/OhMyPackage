@@ -1,7 +1,7 @@
 ﻿using System;
-using GameFramework.Core.Framework;
+using OhMyPackage.Core.Framework;
 
-namespace GameFramework.ObjectPool
+namespace OhMyPackage.ObjectPool
 {
     internal sealed partial class ObjectPoolModule : Module, IObjectPoolModule
     {
@@ -118,7 +118,7 @@ namespace GameFramework.ObjectPool
             {
                 if (obj == null)
                 {
-                    throw new GameFrameworkException("Object is invalid.");
+                    throw new OhMyPackageException("Object is invalid.");
                 }
 
                 Object<T> internalObject = MemoryPool.Acquire<Object<T>>();
@@ -172,7 +172,7 @@ namespace GameFramework.ObjectPool
                 _spawnCount--;
                 if (_spawnCount < 0)
                 {
-                    throw new GameFrameworkException(Utility.Text.Format("Object '{0}' spawn count is less than 0.", Name));
+                    throw new OhMyPackageException(Utility.Text.Format("Object '{0}' spawn count is less than 0.", Name));
                 }
             }
 

@@ -1,4 +1,4 @@
-﻿namespace GameFramework
+﻿namespace OhMyPackage
 {
     /// <summary>
     /// 内存对象Interface。

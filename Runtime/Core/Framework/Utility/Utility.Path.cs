@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public static partial class Utility
     {
@@ -49,7 +49,7 @@ namespace GameFramework
             {
                 if (string.IsNullOrEmpty(directoryName))
                 {
-                    throw new GameFrameworkException("Directory name is invalid.");
+                    throw new OhMyPackageException("Directory name is invalid.");
                 }
 
                 try

@@ -3,7 +3,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     using TranslationDictionary = Dictionary<string, TranslationQuery>;
 

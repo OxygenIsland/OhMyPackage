@@ -1,6 +1,6 @@
-using GameFramework.Procedure;
+using OhMyPackage.Procedure;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public class ProcedurePreload : ProcedureBase
     {

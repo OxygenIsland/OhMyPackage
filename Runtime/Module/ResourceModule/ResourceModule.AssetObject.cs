@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using GameFramework.ObjectPool;
+using OhMyPackage.ObjectPool;
 using YooAsset;
 
-namespace GameFramework.Resource
+namespace OhMyPackage.Resource
 {
     internal partial class ResourceModule
     {
@@ -18,12 +18,12 @@ namespace GameFramework.Resource
             {
                 if (assetHandle == null)
                 {
-                    throw new GameFrameworkException("Resource is invalid.");
+                    throw new OhMyPackageException("Resource is invalid.");
                 }
 
                 if (resourceModule == null)
                 {
-                    throw new GameFrameworkException("Resource Manager is invalid.");
+                    throw new OhMyPackageException("Resource Manager is invalid.");
                 }
 
                 AssetObject assetObject = MemoryPool.Acquire<AssetObject>();

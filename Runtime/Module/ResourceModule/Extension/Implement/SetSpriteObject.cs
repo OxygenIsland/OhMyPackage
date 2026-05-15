@@ -7,7 +7,7 @@ using Object = UnityEngine.Object;
 using Sirenix.OdinInspector;
 #endif
 
-namespace GameFramework.Resource
+namespace OhMyPackage.Resource
 {
     [Serializable]
     public class SetSpriteObject : ISetAssetObject

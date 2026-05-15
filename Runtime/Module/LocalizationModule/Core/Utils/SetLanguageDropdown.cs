@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
 	[AddComponentMenu("I2/Localization/SetLanguage Dropdown")]
 	public class SetLanguageDropdown : MonoBehaviour 

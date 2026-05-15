@@ -2,12 +2,12 @@
 using System.Collections;
 using System.Diagnostics;
 using Cysharp.Threading.Tasks;
-using GameFramework.Core.Framework;
+using OhMyPackage.Core.Framework;
 using UnityEngine;
 using UnityEngine.Internal;
 using Object = UnityEngine.Object;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     internal class UpdateDriver : Module, IUpdateDriver
     {

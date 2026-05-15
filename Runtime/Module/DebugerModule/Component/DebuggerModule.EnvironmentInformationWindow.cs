@@ -3,7 +3,7 @@
 using UnityEngine.Rendering;
 #endif
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public sealed partial class Debugger
     {

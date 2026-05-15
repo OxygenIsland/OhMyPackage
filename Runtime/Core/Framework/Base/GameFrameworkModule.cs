@@ -1,16 +1,16 @@
 ﻿//------------------------------------------------------------
 // Game Framework
 // Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
+// Homepage: https://OhMyPackage.cn/
+// Feedback: mailto:ellan@OhMyPackage.cn
 //------------------------------------------------------------
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 游戏框架模块抽象类。
     /// </summary>
-    internal abstract class GameFrameworkModule
+    internal abstract class OhMyPackageModule
     {
         /// <summary>
         /// 获取游戏框架模块优先级。

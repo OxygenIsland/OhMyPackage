@@ -1,10 +1,10 @@
 ﻿using System.Threading;
 using Cysharp.Threading.Tasks;
-using GameFramework;
+using OhMyPackage;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-namespace GameFramework.Resource
+namespace OhMyPackage.Resource
 {
     public static class SetSpriteExtensions
     {

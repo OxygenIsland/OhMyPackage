@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
 	// This class is used to spawn coroutines from outside of MonoBehaviors
 	public class CoroutineManager : MonoBehaviour 

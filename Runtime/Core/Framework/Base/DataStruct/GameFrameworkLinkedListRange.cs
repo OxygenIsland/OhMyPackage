@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 游戏框架链表范围。
     /// </summary>
     /// <typeparam name="T">指定链表范围的元素类型。</typeparam>
     [StructLayout(LayoutKind.Auto)]
-    public readonly struct GameFrameworkLinkedListRange<T> : IEnumerable<T>, IEnumerable
+    public readonly struct OhMyPackageLinkedListRange<T> : IEnumerable<T>, IEnumerable
     {
         private readonly LinkedListNode<T> _first;
         private readonly LinkedListNode<T> _terminal;
@@ -19,11 +19,11 @@ namespace GameFramework
         /// </summary>
         /// <param name="first">链表范围的开始结点。</param>
         /// <param name="terminal">链表范围的终结标记结点。</param>
-        public GameFrameworkLinkedListRange(LinkedListNode<T> first, LinkedListNode<T> terminal)
+        public OhMyPackageLinkedListRange(LinkedListNode<T> first, LinkedListNode<T> terminal)
         {
             if (first == null || terminal == null || first == terminal)
             {
-                throw new GameFrameworkException("Range is invalid.");
+                throw new OhMyPackageException("Range is invalid.");
             }
 
             _first = first;
@@ -118,19 +118,19 @@ namespace GameFramework
         [StructLayout(LayoutKind.Auto)]
         public struct Enumerator : IEnumerator<T>, IEnumerator
         {
-            private readonly GameFrameworkLinkedListRange<T> _gameFrameworkLinkedListRange;
+            private readonly OhMyPackageLinkedListRange<T> _OhMyPackageLinkedListRange;
             private LinkedListNode<T> _current;
             private T _currentValue;
 
-            internal Enumerator(GameFrameworkLinkedListRange<T> range)
+            internal Enumerator(OhMyPackageLinkedListRange<T> range)
             {
                 if (!range.IsValid)
                 {
-                    throw new GameFrameworkException("Range is invalid.");
+                    throw new OhMyPackageException("Range is invalid.");
                 }
 
-                _gameFrameworkLinkedListRange = range;
-                _current = _gameFrameworkLinkedListRange._first;
+                _OhMyPackageLinkedListRange = range;
+                _current = _OhMyPackageLinkedListRange._first;
                 _currentValue = default(T);
             }
 
@@ -157,7 +157,7 @@ namespace GameFramework
             /// <returns>返回下一个结点。</returns>
             public bool MoveNext()
             {
-                if (_current == null || _current == _gameFrameworkLinkedListRange._terminal)
+                if (_current == null || _current == _OhMyPackageLinkedListRange._terminal)
                 {
                     return false;
                 }
@@ -172,7 +172,7 @@ namespace GameFramework
             /// </summary>
             void IEnumerator.Reset()
             {
-                _current = _gameFrameworkLinkedListRange._first;
+                _current = _OhMyPackageLinkedListRange._first;
                 _currentValue = default(T);
             }
         }

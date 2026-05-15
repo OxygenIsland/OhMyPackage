@@ -1,12 +1,12 @@
 // ============================================================
 // IWebRequestService.cs
-// 对标 GameFramework.WebRequest.IWebRequestManager。
+// 对标 OhMyPackage.WebRequest.IWebRequestManager。
 //
 // 核心差异：
-//   GameFramework  → 事件回调（WebRequestStart / Success / Failure）
+//   OhMyPackage  → 事件回调（WebRequestStart / Success / Failure）
 //   IWebRequestService → async UniTask，直接 await 获取结果，零回调
 //
-// 保留的 GameFramework 优秀思想：
+// 保留的 OhMyPackage 优秀思想：
 //   ✓ 并发控制    MaxConcurrency ←→ TotalAgentCount
 //   ✓ 优先级调度  WebRequestOptions.Priority ←→ AddWebRequest(priority)
 //   ✓ 标签分组    WebRequestOptions.Tag ←→ AddWebRequest(tag)
@@ -34,7 +34,7 @@ namespace MyGame.Toolkit.Network
         /// <summary>
         /// 最大并发请求数（默认 4）。
         /// 修改后立即对新入队任务生效，不影响已获得槽的运行中任务。
-        /// 对标 GameFramework 通过多次调用 AddWebRequestAgentHelper 控制并发数。
+        /// 对标 OhMyPackage 通过多次调用 AddWebRequestAgentHelper 控制并发数。
         /// </summary>
         int MaxConcurrency { get; set; }
 

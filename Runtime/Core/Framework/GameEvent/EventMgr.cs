@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GameFramework.Event
+namespace OhMyPackage.Event
 {
     /// <summary>
     /// 事件管理器。

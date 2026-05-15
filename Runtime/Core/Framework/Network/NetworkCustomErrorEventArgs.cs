@@ -1,16 +1,16 @@
 ﻿//------------------------------------------------------------
 // Game Framework
 // Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
+// Homepage: https://OhMyPackage.cn/
+// Feedback: mailto:ellan@OhMyPackage.cn
 //------------------------------------------------------------
 
-namespace GameFramework.Network
+namespace OhMyPackage.Network
 {
     /// <summary>
     /// 用户自定义网络错误事件。
     /// </summary>
-    public sealed class NetworkCustomErrorEventArgs : GameFrameworkEventArgs
+    public sealed class NetworkCustomErrorEventArgs : OhMyPackageEventArgs
     {
         /// <summary>
         /// 初始化用户自定义网络错误事件的新实例。

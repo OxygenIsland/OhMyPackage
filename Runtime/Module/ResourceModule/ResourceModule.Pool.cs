@@ -1,6 +1,6 @@
-﻿using GameFramework.ObjectPool;
+﻿using OhMyPackage.ObjectPool;
 
-namespace GameFramework.Resource
+namespace OhMyPackage.Resource
 {
     internal partial class ResourceModule
     {
@@ -62,7 +62,7 @@ namespace GameFramework.Resource
         {
             if (objectPoolModule == null)
             {
-                throw new GameFrameworkException("Object pool manager is invalid.");
+                throw new OhMyPackageException("Object pool manager is invalid.");
             }
             _assetPool = objectPoolModule.CreateMultiSpawnObjectPool<AssetObject>("Asset Pool");
         }

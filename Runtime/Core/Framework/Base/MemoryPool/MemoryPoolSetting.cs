@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 内存强制检查类型。

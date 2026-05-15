@@ -1,10 +1,10 @@
 // ============================================================
 // WebRequestService.cs
-// 对标 GameFramework.WebRequest.WebRequestManager。
+// 对标 OhMyPackage.WebRequest.WebRequestManager。
 //
 // 核心机制：
 //
-//  1. 优先级调度（对标 GameFramework TaskPool + Agent 池）
+//  1. 优先级调度（对标 OhMyPackage TaskPool + Agent 池）
 //     ── SortedList<(negPriority, serialId), UniTaskCompletionSource<bool>>
 //        Key = (-priority, serialId)：自然升序 ≡ 优先级降序 + FIFO 同优先级
 //        当并发槽已满时，请求进入此队列；空闲槽直接转移给队首等待者。
@@ -13,7 +13,7 @@
 //     ── _activeCount 计数器 + MaxConcurrency 上限
 //        槽位在任务间"直接转移"，避免 _activeCount 反复增减抖动。
 //
-//  3. 取消安全（对标 GameFramework RemoveWebRequest）
+//  3. 取消安全（对标 OhMyPackage RemoveWebRequest）
 //     ── 每个任务持有独立 TaskCts（serialId 取消）+ 联合 LinkedCts（HTTP 调用层）
 //        SlotAcquired 标志区分"在队列中被取消"与"执行中被取消"，
 //        确保只有真正持有槽的任务才会执行 Release 逻辑。
@@ -46,13 +46,13 @@ namespace MyGame.Toolkit.Network
         private int _maxConcurrency;
         private int _defaultTimeout;
 
-        // ── 任务注册表（对标 GameFramework TaskPool 内部 task 列表）────────
+        // ── 任务注册表（对标 OhMyPackage TaskPool 内部 task 列表）────────
         // key = SerialId
         private readonly Dictionary<int, WebRequestTask>      _taskRegistry = new();
         // key = Tag → serialId 集合（快速按标签查询与取消）
         private readonly Dictionary<string, HashSet<int>>     _tagIndex     = new();
 
-        // ── 优先级调度队列（对标 GameFramework 的等待 Task 队列）────────────
+        // ── 优先级调度队列（对标 OhMyPackage 的等待 Task 队列）────────────
         // Key: (-priority, serialId) → SortedList 自然升序等于优先级降序 + FIFO
         private int _activeCount = 0;
         private readonly SortedList<(int NegPriority, int SerialId), UniTaskCompletionSource<bool>>

@@ -9,7 +9,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace GameFramework.Download
+namespace OhMyPackage.Download
 {
     /// <summary>
     /// 下载服务核心实现（纯 C# 类，不依赖 MonoBehaviour）。

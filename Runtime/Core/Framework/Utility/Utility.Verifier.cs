@@ -1,14 +1,14 @@
 ﻿//------------------------------------------------------------
 // Game Framework
 // Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
+// Homepage: https://OhMyPackage.cn/
+// Feedback: mailto:ellan@OhMyPackage.cn
 //------------------------------------------------------------
 
 using System;
 using System.IO;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public static partial class Utility
     {
@@ -30,7 +30,7 @@ namespace GameFramework
             {
                 if (bytes == null)
                 {
-                    throw new GameFrameworkException("Bytes is invalid.");
+                    throw new OhMyPackageException("Bytes is invalid.");
                 }
 
                 return GetCrc32(bytes, 0, bytes.Length);
@@ -47,12 +47,12 @@ namespace GameFramework
             {
                 if (bytes == null)
                 {
-                    throw new GameFrameworkException("Bytes is invalid.");
+                    throw new OhMyPackageException("Bytes is invalid.");
                 }
 
                 if (offset < 0 || length < 0 || offset + length > bytes.Length)
                 {
-                    throw new GameFrameworkException("Offset or length is invalid.");
+                    throw new OhMyPackageException("Offset or length is invalid.");
                 }
 
                 s_Algorithm.HashCore(bytes, offset, length);
@@ -70,7 +70,7 @@ namespace GameFramework
             {
                 if (stream == null)
                 {
-                    throw new GameFrameworkException("Stream is invalid.");
+                    throw new OhMyPackageException("Stream is invalid.");
                 }
 
                 while (true)
@@ -122,12 +122,12 @@ namespace GameFramework
             {
                 if (bytes == null)
                 {
-                    throw new GameFrameworkException("Result is invalid.");
+                    throw new OhMyPackageException("Result is invalid.");
                 }
 
                 if (offset < 0 || offset + 4 > bytes.Length)
                 {
-                    throw new GameFrameworkException("Offset or length is invalid.");
+                    throw new OhMyPackageException("Offset or length is invalid.");
                 }
 
                 bytes[offset] = (byte)((crc32 >> 24) & 0xff);
@@ -140,18 +140,18 @@ namespace GameFramework
             {
                 if (stream == null)
                 {
-                    throw new GameFrameworkException("Stream is invalid.");
+                    throw new OhMyPackageException("Stream is invalid.");
                 }
 
                 if (code == null)
                 {
-                    throw new GameFrameworkException("Code is invalid.");
+                    throw new OhMyPackageException("Code is invalid.");
                 }
 
                 int codeLength = code.Length;
                 if (codeLength <= 0)
                 {
-                    throw new GameFrameworkException("Code length is invalid.");
+                    throw new OhMyPackageException("Code length is invalid.");
                 }
 
                 int bytesLength = (int)stream.Length;

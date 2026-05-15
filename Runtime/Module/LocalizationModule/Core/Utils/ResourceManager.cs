@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 #endif
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
 	public interface IResourceManager_Bundles
 	{

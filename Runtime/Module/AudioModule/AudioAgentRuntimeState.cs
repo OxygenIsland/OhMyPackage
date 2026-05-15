@@ -1,4 +1,4 @@
-﻿namespace GameFramework
+﻿namespace OhMyPackage
 {
     /// <summary>
     /// 音频代理辅助器运行时状态枚举。

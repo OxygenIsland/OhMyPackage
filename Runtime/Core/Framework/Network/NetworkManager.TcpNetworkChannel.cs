@@ -1,17 +1,17 @@
 ﻿//------------------------------------------------------------
 // Game Framework
 // Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
+// Homepage: https://OhMyPackage.cn/
+// Feedback: mailto:ellan@OhMyPackage.cn
 //------------------------------------------------------------
 
 using System;
 using System.Net;
 using System.Net.Sockets;
 
-namespace GameFramework.Network
+namespace OhMyPackage.Network
 {
-    internal sealed partial class NetworkManager : GameFrameworkModule, INetworkManager
+    internal sealed partial class NetworkManager : OhMyPackageModule, INetworkManager
     {
         /// <summary>
         /// TCP 网络频道。
@@ -65,7 +65,7 @@ namespace GameFramework.Network
                         return;
                     }
 
-                    throw new GameFrameworkException(errorMessage);
+                    throw new OhMyPackageException(errorMessage);
                 }
 
                 m_NetworkChannelHelper.PrepareForConnecting();

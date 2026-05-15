@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NLog;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 全局配置管理器。
@@ -14,7 +14,7 @@ namespace GameFramework
     /// <list type="bullet">
     ///   <item>通过 <see cref="IConfigSource"/> 策略模式从不同来源异步加载 JSON 配置。</item>
     ///   <item>多源加载与合并（Last-Write-Wins 覆盖策略）。</item>
-    ///   <item>扁平键值访问（兼容原 GameFramework Config 风格）。</item>
+    ///   <item>扁平键值访问（兼容原 OhMyPackage Config 风格）。</item>
     ///   <item>强类型 Section 反序列化（推荐用于新业务）。</item>
     ///   <item>运行时动态写入与清除。</item>
     /// </list>

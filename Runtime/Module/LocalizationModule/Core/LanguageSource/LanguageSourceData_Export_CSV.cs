@@ -2,7 +2,7 @@
 using System.Text;
 using UnityEngine;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     public partial class LanguageSourceData
     {

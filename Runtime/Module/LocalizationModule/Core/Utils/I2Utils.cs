@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     public static class I2Utils
     {

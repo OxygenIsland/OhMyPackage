@@ -2,7 +2,7 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public interface ISceneModule
     {

@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 游戏框架多值字典类。
     /// </summary>
     /// <typeparam name="TKey">指定多值字典的主键类型。</typeparam>
     /// <typeparam name="TValue">指定多值字典的值类型。</typeparam>
-    public sealed class GameFrameworkMultiDictionary<TKey, TValue> : IEnumerable<KeyValuePair<TKey, GameFrameworkLinkedListRange<TValue>>>, IEnumerable
+    public sealed class OhMyPackageMultiDictionary<TKey, TValue> : IEnumerable<KeyValuePair<TKey, OhMyPackageLinkedListRange<TValue>>>, IEnumerable
     {
-        private readonly GameFrameworkLinkedList<TValue> _linkedList;
-        private readonly Dictionary<TKey, GameFrameworkLinkedListRange<TValue>> _dictionary;
+        private readonly OhMyPackageLinkedList<TValue> _linkedList;
+        private readonly Dictionary<TKey, OhMyPackageLinkedListRange<TValue>> _dictionary;
 
         /// <summary>
         /// 初始化游戏框架多值字典类的新实例。
         /// </summary>
-        public GameFrameworkMultiDictionary()
+        public OhMyPackageMultiDictionary()
         {
-            _linkedList = new GameFrameworkLinkedList<TValue>();
-            _dictionary = new Dictionary<TKey, GameFrameworkLinkedListRange<TValue>>();
+            _linkedList = new OhMyPackageLinkedList<TValue>();
+            _dictionary = new Dictionary<TKey, OhMyPackageLinkedListRange<TValue>>();
         }
 
         /// <summary>
@@ -33,11 +33,11 @@ namespace GameFramework
         /// </summary>
         /// <param name="key">指定的主键。</param>
         /// <returns>指定主键的范围。</returns>
-        public GameFrameworkLinkedListRange<TValue> this[TKey key]
+        public OhMyPackageLinkedListRange<TValue> this[TKey key]
         {
             get
             {
-                GameFrameworkLinkedListRange<TValue> range = default(GameFrameworkLinkedListRange<TValue>);
+                OhMyPackageLinkedListRange<TValue> range = default(OhMyPackageLinkedListRange<TValue>);
                 _dictionary.TryGetValue(key, out range);
                 return range;
             }
@@ -70,7 +70,7 @@ namespace GameFramework
         /// <returns>多值字典中是否包含指定值。</returns>
         public bool Contains(TKey key, TValue value)
         {
-            GameFrameworkLinkedListRange<TValue> range = default(GameFrameworkLinkedListRange<TValue>);
+            OhMyPackageLinkedListRange<TValue> range = default(OhMyPackageLinkedListRange<TValue>);
             if (_dictionary.TryGetValue(key, out range))
             {
                 return range.Contains(value);
@@ -85,7 +85,7 @@ namespace GameFramework
         /// <param name="key">指定的主键。</param>
         /// <param name="range">指定主键的范围。</param>
         /// <returns>是否获取成功。</returns>
-        public bool TryGetValue(TKey key, out GameFrameworkLinkedListRange<TValue> range)
+        public bool TryGetValue(TKey key, out OhMyPackageLinkedListRange<TValue> range)
         {
             return _dictionary.TryGetValue(key, out range);
         }
@@ -97,7 +97,7 @@ namespace GameFramework
         /// <param name="value">指定的值。</param>
         public void Add(TKey key, TValue value)
         {
-            GameFrameworkLinkedListRange<TValue> range = default(GameFrameworkLinkedListRange<TValue>);
+            OhMyPackageLinkedListRange<TValue> range = default(OhMyPackageLinkedListRange<TValue>);
             if (_dictionary.TryGetValue(key, out range))
             {
                 _linkedList.AddBefore(range.Terminal, value);
@@ -106,7 +106,7 @@ namespace GameFramework
             {
                 LinkedListNode<TValue> first = _linkedList.AddLast(value);
                 LinkedListNode<TValue> terminal = _linkedList.AddLast(default(TValue));
-                _dictionary.Add(key, new GameFrameworkLinkedListRange<TValue>(first, terminal));
+                _dictionary.Add(key, new OhMyPackageLinkedListRange<TValue>(first, terminal));
             }
         }
 
@@ -118,7 +118,7 @@ namespace GameFramework
         /// <returns>是否移除成功。</returns>
         public bool Remove(TKey key, TValue value)
         {
-            GameFrameworkLinkedListRange<TValue> range = default(GameFrameworkLinkedListRange<TValue>);
+            OhMyPackageLinkedListRange<TValue> range = default(OhMyPackageLinkedListRange<TValue>);
             if (_dictionary.TryGetValue(key, out range))
             {
                 for (LinkedListNode<TValue> current = range.First; current != null && current != range.Terminal; current = current.Next)
@@ -135,7 +135,7 @@ namespace GameFramework
                             }
                             else
                             {
-                                _dictionary[key] = new GameFrameworkLinkedListRange<TValue>(next, range.Terminal);
+                                _dictionary[key] = new OhMyPackageLinkedListRange<TValue>(next, range.Terminal);
                             }
                         }
 
@@ -155,7 +155,7 @@ namespace GameFramework
         /// <returns>是否移除成功。</returns>
         public bool RemoveAll(TKey key)
         {
-            GameFrameworkLinkedListRange<TValue> range = default(GameFrameworkLinkedListRange<TValue>);
+            OhMyPackageLinkedListRange<TValue> range = default(OhMyPackageLinkedListRange<TValue>);
             if (_dictionary.TryGetValue(key, out range))
             {
                 _dictionary.Remove(key);
@@ -187,7 +187,7 @@ namespace GameFramework
         /// 返回循环访问集合的枚举数。
         /// </summary>
         /// <returns>循环访问集合的枚举数。</returns>
-        IEnumerator<KeyValuePair<TKey, GameFrameworkLinkedListRange<TValue>>> IEnumerable<KeyValuePair<TKey, GameFrameworkLinkedListRange<TValue>>>.GetEnumerator()
+        IEnumerator<KeyValuePair<TKey, OhMyPackageLinkedListRange<TValue>>> IEnumerable<KeyValuePair<TKey, OhMyPackageLinkedListRange<TValue>>>.GetEnumerator()
         {
             return GetEnumerator();
         }
@@ -205,15 +205,15 @@ namespace GameFramework
         /// 循环访问集合的枚举数。
         /// </summary>
         [StructLayout(LayoutKind.Auto)]
-        public struct Enumerator : IEnumerator<KeyValuePair<TKey, GameFrameworkLinkedListRange<TValue>>>, IEnumerator
+        public struct Enumerator : IEnumerator<KeyValuePair<TKey, OhMyPackageLinkedListRange<TValue>>>, IEnumerator
         {
-            private Dictionary<TKey, GameFrameworkLinkedListRange<TValue>>.Enumerator _enumerator;
+            private Dictionary<TKey, OhMyPackageLinkedListRange<TValue>>.Enumerator _enumerator;
 
-            internal Enumerator(Dictionary<TKey, GameFrameworkLinkedListRange<TValue>> dictionary)
+            internal Enumerator(Dictionary<TKey, OhMyPackageLinkedListRange<TValue>> dictionary)
             {
                 if (dictionary == null)
                 {
-                    throw new GameFrameworkException("Dictionary is invalid.");
+                    throw new OhMyPackageException("Dictionary is invalid.");
                 }
 
                 _enumerator = dictionary.GetEnumerator();
@@ -222,7 +222,7 @@ namespace GameFramework
             /// <summary>
             /// 获取当前结点。
             /// </summary>
-            public KeyValuePair<TKey, GameFrameworkLinkedListRange<TValue>> Current => _enumerator.Current;
+            public KeyValuePair<TKey, OhMyPackageLinkedListRange<TValue>> Current => _enumerator.Current;
 
             /// <summary>
             /// 获取当前的枚举数。
@@ -251,7 +251,7 @@ namespace GameFramework
             /// </summary>
             void IEnumerator.Reset()
             {
-                ((IEnumerator<KeyValuePair<TKey, GameFrameworkLinkedListRange<TValue>>>)_enumerator).Reset();
+                ((IEnumerator<KeyValuePair<TKey, OhMyPackageLinkedListRange<TValue>>>)_enumerator).Reset();
             }
         }
     }

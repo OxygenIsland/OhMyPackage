@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     public static partial class LocalizationManager
     {

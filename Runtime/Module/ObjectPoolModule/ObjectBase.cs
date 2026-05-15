@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GameFramework.ObjectPool
+namespace OhMyPackage.ObjectPool
 {
     /// <summary>
     /// 对象基类。
@@ -119,7 +119,7 @@ namespace GameFramework.ObjectPool
         {
             if (target == null)
             {
-                throw new GameFrameworkException(Utility.Text.Format("Target '{0}' is invalid.", name));
+                throw new OhMyPackageException(Utility.Text.Format("Target '{0}' is invalid.", name));
             }
 
             _name = name ?? string.Empty;

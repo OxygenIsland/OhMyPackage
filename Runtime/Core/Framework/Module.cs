@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GameFramework.Core.Framework
+namespace OhMyPackage.Core.Framework
 {
     /// <summary>
     /// 模块需要框架轮询。

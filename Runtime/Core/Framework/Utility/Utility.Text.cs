@@ -1,4 +1,4 @@
-﻿namespace GameFramework
+﻿namespace OhMyPackage
 {
     public static partial class Utility
     {
@@ -29,7 +29,7 @@
             {
                 if (format == null)
                 {
-                    throw new GameFrameworkException("Format is invalid.");
+                    throw new OhMyPackageException("Format is invalid.");
                 }
 
                 if (_textHelper == null)
@@ -53,7 +53,7 @@
             {
                 if (format == null)
                 {
-                    throw new GameFrameworkException("Format is invalid.");
+                    throw new OhMyPackageException("Format is invalid.");
                 }
 
                 if (_textHelper == null)
@@ -79,7 +79,7 @@
             {
                 if (format == null)
                 {
-                    throw new GameFrameworkException("Format is invalid.");
+                    throw new OhMyPackageException("Format is invalid.");
                 }
 
                 if (_textHelper == null)
@@ -107,7 +107,7 @@
             {
                 if (format == null)
                 {
-                    throw new GameFrameworkException("Format is invalid.");
+                    throw new OhMyPackageException("Format is invalid.");
                 }
 
                 if (_textHelper == null)
@@ -137,7 +137,7 @@
             {
                 if (format == null)
                 {
-                    throw new GameFrameworkException("Format is invalid.");
+                    throw new OhMyPackageException("Format is invalid.");
                 }
 
                 if (_textHelper == null)
@@ -169,7 +169,7 @@
             {
                 if (format == null)
                 {
-                    throw new GameFrameworkException("Format is invalid.");
+                    throw new OhMyPackageException("Format is invalid.");
                 }
 
                 if (_textHelper == null)
@@ -203,7 +203,7 @@
             {
                 if (format == null)
                 {
-                    throw new GameFrameworkException("Format is invalid.");
+                    throw new OhMyPackageException("Format is invalid.");
                 }
 
                 if (_textHelper == null)
@@ -239,7 +239,7 @@
             {
                 if (format == null)
                 {
-                    throw new GameFrameworkException("Format is invalid.");
+                    throw new OhMyPackageException("Format is invalid.");
                 }
 
                 if (_textHelper == null)
@@ -277,7 +277,7 @@
             {
                 if (format == null)
                 {
-                    throw new GameFrameworkException("Format is invalid.");
+                    throw new OhMyPackageException("Format is invalid.");
                 }
 
                 if (_textHelper == null)
@@ -317,7 +317,7 @@
             {
                 if (format == null)
                 {
-                    throw new GameFrameworkException("Format is invalid.");
+                    throw new OhMyPackageException("Format is invalid.");
                 }
 
                 if (_textHelper == null)
@@ -359,7 +359,7 @@
             {
                 if (format == null)
                 {
-                    throw new GameFrameworkException("Format is invalid.");
+                    throw new OhMyPackageException("Format is invalid.");
                 }
 
                 if (_textHelper == null)
@@ -403,7 +403,7 @@
             {
                 if (format == null)
                 {
-                    throw new GameFrameworkException("Format is invalid.");
+                    throw new OhMyPackageException("Format is invalid.");
                 }
 
                 if (_textHelper == null)
@@ -449,7 +449,7 @@
             {
                 if (format == null)
                 {
-                    throw new GameFrameworkException("Format is invalid.");
+                    throw new OhMyPackageException("Format is invalid.");
                 }
 
                 if (_textHelper == null)
@@ -497,7 +497,7 @@
             {
                 if (format == null)
                 {
-                    throw new GameFrameworkException("Format is invalid.");
+                    throw new OhMyPackageException("Format is invalid.");
                 }
 
                 if (_textHelper == null)
@@ -547,7 +547,7 @@
             {
                 if (format == null)
                 {
-                    throw new GameFrameworkException("Format is invalid.");
+                    throw new OhMyPackageException("Format is invalid.");
                 }
 
                 if (_textHelper == null)
@@ -599,7 +599,7 @@
             {
                 if (format == null)
                 {
-                    throw new GameFrameworkException("Format is invalid.");
+                    throw new OhMyPackageException("Format is invalid.");
                 }
 
                 if (_textHelper == null)

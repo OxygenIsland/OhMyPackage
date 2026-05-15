@@ -2,13 +2,13 @@ using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 全局配置管理器接口。
     /// <para>
     /// 支持从多个 <see cref="IConfigSource"/> 异步加载 JSON 配置，并以合并方式写入内部存储。
-    /// 提供扁平键值访问（兼容原 GameFramework 风格）和强类型 Section 反序列化两种读取方式。
+    /// 提供扁平键值访问（兼容原 OhMyPackage 风格）和强类型 Section 反序列化两种读取方式。
     /// </para>
     ///
     /// <example>

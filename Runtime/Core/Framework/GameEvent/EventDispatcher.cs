@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GameFramework.Event
+namespace OhMyPackage.Event
 {
     /// <summary>
     /// 封装消息的底层分发和注册。

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     #if UNITY_EDITOR
     [InitializeOnLoad] 

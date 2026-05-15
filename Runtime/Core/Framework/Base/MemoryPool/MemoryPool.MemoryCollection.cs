@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public static partial class MemoryPool
     {

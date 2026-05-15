@@ -1,14 +1,14 @@
 ﻿//------------------------------------------------------------
 // Game Framework
 // Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
+// Homepage: https://OhMyPackage.cn/
+// Feedback: mailto:ellan@OhMyPackage.cn
 //------------------------------------------------------------
 
 using System;
 using System.Collections.Generic;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 引用池。
@@ -110,7 +110,7 @@ namespace GameFramework
         {
             if (reference == null)
             {
-                throw new GameFrameworkException("Reference is invalid.");
+                throw new OhMyPackageException("Reference is invalid.");
             }
 
             Type referenceType = reference.GetType();
@@ -188,17 +188,17 @@ namespace GameFramework
 
             if (referenceType == null)
             {
-                throw new GameFrameworkException("Reference type is invalid.");
+                throw new OhMyPackageException("Reference type is invalid.");
             }
 
             if (!referenceType.IsClass || referenceType.IsAbstract)
             {
-                throw new GameFrameworkException("Reference type is not a non-abstract class type.");
+                throw new OhMyPackageException("Reference type is not a non-abstract class type.");
             }
 
             if (!typeof(IReference).IsAssignableFrom(referenceType))
             {
-                throw new GameFrameworkException(Utility.Text.Format("Reference type '{0}' is invalid.", referenceType.FullName));
+                throw new OhMyPackageException(Utility.Text.Format("Reference type '{0}' is invalid.", referenceType.FullName));
             }
         }
 
@@ -206,7 +206,7 @@ namespace GameFramework
         {
             if (referenceType == null)
             {
-                throw new GameFrameworkException("ReferenceType is invalid.");
+                throw new OhMyPackageException("ReferenceType is invalid.");
             }
 
             ReferenceCollection referenceCollection = null;

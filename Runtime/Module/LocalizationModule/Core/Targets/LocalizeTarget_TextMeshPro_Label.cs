@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 
 #if TextMeshPro
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     #if UNITY_EDITOR
     [InitializeOnLoad] 

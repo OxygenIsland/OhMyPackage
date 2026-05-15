@@ -1,7 +1,7 @@
 ﻿using System;
-using GameFramework.Fsm;
+using OhMyPackage.Fsm;
 
-namespace GameFramework.Procedure
+namespace OhMyPackage.Procedure
 {
     /// <summary>
     /// 流程管理器接口。
@@ -77,7 +77,7 @@ namespace GameFramework.Procedure
         /// </summary>
         /// <param name="procedures">新的的流程。</param>
         /// <returns>是否重启成功。</returns>
-        /// <exception cref="GameFrameworkException">重启异常。</exception>
+        /// <exception cref="OhMyPackageException">重启异常。</exception>
         bool RestartProcedure(params ProcedureBase[] procedures);
     }
 }

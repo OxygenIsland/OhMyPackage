@@ -1,8 +1,8 @@
 ﻿//------------------------------------------------------------
 // Game Framework
 // Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
+// Homepage: https://OhMyPackage.cn/
+// Feedback: mailto:ellan@OhMyPackage.cn
 //------------------------------------------------------------
 
 using System;
@@ -10,9 +10,9 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 
-namespace GameFramework.Network
+namespace OhMyPackage.Network
 {
-    internal sealed partial class NetworkManager : GameFrameworkModule, INetworkManager
+    internal sealed partial class NetworkManager : OhMyPackageModule, INetworkManager
     {
         /// <summary>
         /// 网络频道基类。
@@ -37,11 +37,11 @@ namespace GameFramework.Network
             protected bool m_Active;
             private bool m_Disposed;
 
-            public GameFrameworkAction<NetworkChannelBase, object> NetworkChannelConnected;
-            public GameFrameworkAction<NetworkChannelBase> NetworkChannelClosed;
-            public GameFrameworkAction<NetworkChannelBase, int> NetworkChannelMissHeartBeat;
-            public GameFrameworkAction<NetworkChannelBase, NetworkErrorCode, SocketError, string> NetworkChannelError;
-            public GameFrameworkAction<NetworkChannelBase, object> NetworkChannelCustomError;
+            public OhMyPackageAction<NetworkChannelBase, object> NetworkChannelConnected;
+            public OhMyPackageAction<NetworkChannelBase> NetworkChannelClosed;
+            public OhMyPackageAction<NetworkChannelBase, int> NetworkChannelMissHeartBeat;
+            public OhMyPackageAction<NetworkChannelBase, NetworkErrorCode, SocketError, string> NetworkChannelError;
+            public OhMyPackageAction<NetworkChannelBase, object> NetworkChannelCustomError;
 
             /// <summary>
             /// 初始化网络频道基类的新实例。
@@ -298,7 +298,7 @@ namespace GameFramework.Network
             {
                 if (handler == null)
                 {
-                    throw new GameFrameworkException("Packet handler is invalid.");
+                    throw new OhMyPackageException("Packet handler is invalid.");
                 }
 
                 m_ReceivePacketPool.Subscribe(handler.Id, handler.Handle);
@@ -355,7 +355,7 @@ namespace GameFramework.Network
                             return;
                         }
 
-                        throw new GameFrameworkException(errorMessage);
+                        throw new OhMyPackageException(errorMessage);
                 }
 
                 m_SendState.Reset();
@@ -427,7 +427,7 @@ namespace GameFramework.Network
                         return;
                     }
 
-                    throw new GameFrameworkException(errorMessage);
+                    throw new OhMyPackageException(errorMessage);
                 }
 
                 if (!m_Active)
@@ -439,7 +439,7 @@ namespace GameFramework.Network
                         return;
                     }
 
-                    throw new GameFrameworkException(errorMessage);
+                    throw new OhMyPackageException(errorMessage);
                 }
 
                 if (packet == null)
@@ -451,7 +451,7 @@ namespace GameFramework.Network
                         return;
                     }
 
-                    throw new GameFrameworkException(errorMessage);
+                    throw new OhMyPackageException(errorMessage);
                 }
 
                 lock (m_SendPacketPool)
@@ -532,7 +532,7 @@ namespace GameFramework.Network
                             return false;
                         }
 
-                        throw new GameFrameworkException(errorMessage);
+                        throw new OhMyPackageException(errorMessage);
                     }
                 }
 
@@ -565,7 +565,7 @@ namespace GameFramework.Network
                             return false;
                         }
 
-                        throw new GameFrameworkException(errorMessage);
+                        throw new OhMyPackageException(errorMessage);
                     }
 
                     m_ReceiveState.PrepareForPacket(packetHeader);

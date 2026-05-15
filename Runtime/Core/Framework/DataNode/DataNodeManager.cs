@@ -1,18 +1,18 @@
 ﻿//------------------------------------------------------------
 // Game Framework
 // Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
+// Homepage: https://OhMyPackage.cn/
+// Feedback: mailto:ellan@OhMyPackage.cn
 //------------------------------------------------------------
 
 using System;
 
-namespace GameFramework.DataNode
+namespace OhMyPackage.DataNode
 {
     /// <summary>
     /// 数据结点管理器。
     /// </summary>
-    internal sealed partial class DataNodeManager : GameFrameworkModule, IDataNodeManager
+    internal sealed partial class DataNodeManager : OhMyPackageModule, IDataNodeManager
     {
         private static readonly string[] EmptyStringArray = new string[] { };
         private static readonly string[] PathSplitSeparator = new string[] { ".", "/", "\\" };
@@ -90,7 +90,7 @@ namespace GameFramework.DataNode
             IDataNode current = GetNode(path, node);
             if (current == null)
             {
-                throw new GameFrameworkException(Utility.Text.Format("Data node is not exist, path '{0}', node '{1}'.", path, node != null ? node.FullName : string.Empty));
+                throw new OhMyPackageException(Utility.Text.Format("Data node is not exist, path '{0}', node '{1}'.", path, node != null ? node.FullName : string.Empty));
             }
 
             return current.GetData<T>();
@@ -107,7 +107,7 @@ namespace GameFramework.DataNode
             IDataNode current = GetNode(path, node);
             if (current == null)
             {
-                throw new GameFrameworkException(Utility.Text.Format("Data node is not exist, path '{0}', node '{1}'.", path, node != null ? node.FullName : string.Empty));
+                throw new OhMyPackageException(Utility.Text.Format("Data node is not exist, path '{0}', node '{1}'.", path, node != null ? node.FullName : string.Empty));
             }
 
             return current.GetData();

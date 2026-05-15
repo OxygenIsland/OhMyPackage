@@ -10,7 +10,7 @@ using NLog;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 日志主动上报服务。将本地 NLog 日志文件打包为 ZIP，通过 multipart POST 上传到服务器。

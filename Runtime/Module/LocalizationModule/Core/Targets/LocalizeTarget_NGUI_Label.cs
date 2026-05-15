@@ -3,7 +3,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     #if UNITY_EDITOR
     [InitializeOnLoad] 

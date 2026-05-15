@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     public static partial class LocalizationManager
     {

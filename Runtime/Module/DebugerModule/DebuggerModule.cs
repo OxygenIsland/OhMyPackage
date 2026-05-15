@@ -1,7 +1,7 @@
-﻿using GameFramework.Core.Framework;
+﻿using OhMyPackage.Core.Framework;
 using UnityEngine;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 调试器管理器。
@@ -72,12 +72,12 @@ namespace GameFramework
         {
             if (string.IsNullOrEmpty(path))
             {
-                throw new GameFrameworkException("Path is invalid.");
+                throw new OhMyPackageException("Path is invalid.");
             }
 
             if (debuggerWindow == null)
             {
-                throw new GameFrameworkException("Debugger window is invalid.");
+                throw new OhMyPackageException("Debugger window is invalid.");
             }
 
             _debuggerWindowRoot.RegisterDebuggerWindow(path, debuggerWindow);

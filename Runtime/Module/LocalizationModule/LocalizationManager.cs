@@ -3,11 +3,11 @@ using Object = UnityEngine.Object;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Cysharp.Threading.Tasks;
-using GameFramework.Localization;
-using GameFramework.Resource;
-using GameFramework.Core.Framework;
+using OhMyPackage.Localization;
+using OhMyPackage.Resource;
+using OhMyPackage.Core.Framework;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 本地化组件。

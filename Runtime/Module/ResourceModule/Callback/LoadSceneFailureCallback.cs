@@ -1,4 +1,4 @@
-﻿namespace GameFramework.Resource
+﻿namespace OhMyPackage.Resource
 {
     /// <summary>
     /// 加载场景失败回调函数。

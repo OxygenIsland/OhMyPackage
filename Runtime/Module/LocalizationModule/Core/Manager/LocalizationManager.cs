@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     public static partial class LocalizationManager
     {

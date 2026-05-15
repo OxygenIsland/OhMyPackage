@@ -1,4 +1,4 @@
-﻿namespace GameFramework.Resource
+﻿namespace OhMyPackage.Resource
 {
     /// <summary>
     /// 加载场景回调函数集。
@@ -48,7 +48,7 @@
         {
             if (loadSceneSuccessCallback == null)
             {
-                throw new GameFrameworkException("Load scene success callback is invalid.");
+                throw new OhMyPackageException("Load scene success callback is invalid.");
             }
 
             _loadSceneSuccessCallback = loadSceneSuccessCallback;

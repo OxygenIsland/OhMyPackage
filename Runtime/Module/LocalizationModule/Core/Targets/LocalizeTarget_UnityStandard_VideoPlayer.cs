@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Video;
 
-namespace GameFramework.Localization 
+namespace OhMyPackage.Localization 
 { 
     #if UNITY_EDITOR 
     [InitializeOnLoad]

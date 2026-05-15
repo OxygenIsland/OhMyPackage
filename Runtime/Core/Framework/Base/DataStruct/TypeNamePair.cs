@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 类型和名称的组合值。
@@ -30,7 +30,7 @@ namespace GameFramework
         {
             if (type == null)
             {
-                throw new GameFrameworkException("Type is invalid.");
+                throw new OhMyPackageException("Type is invalid.");
             }
 
             _type = type;
@@ -55,7 +55,7 @@ namespace GameFramework
         {
             if (_type == null)
             {
-                throw new GameFrameworkException("Type is invalid.");
+                throw new OhMyPackageException("Type is invalid.");
             }
 
             string typeName = _type.FullName;

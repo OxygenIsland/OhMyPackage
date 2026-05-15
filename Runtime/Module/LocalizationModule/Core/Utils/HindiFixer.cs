@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
 
     public class HindiFixer

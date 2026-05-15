@@ -1,15 +1,15 @@
 ﻿//------------------------------------------------------------
 // Game Framework
 // Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
+// Homepage: https://OhMyPackage.cn/
+// Feedback: mailto:ellan@OhMyPackage.cn
 //------------------------------------------------------------
 
 using System.Collections.Generic;
 
-namespace GameFramework.DataNode
+namespace OhMyPackage.DataNode
 {
-    internal sealed partial class DataNodeManager : GameFrameworkModule, IDataNodeManager
+    internal sealed partial class DataNodeManager : OhMyPackageModule, IDataNodeManager
     {
         /// <summary>
         /// 数据结点。
@@ -41,7 +41,7 @@ namespace GameFramework.DataNode
             {
                 if (!IsValidName(name))
                 {
-                    throw new GameFrameworkException("Name of data node is invalid.");
+                    throw new OhMyPackageException("Name of data node is invalid.");
                 }
 
                 DataNode node = ReferencePool.Acquire<DataNode>();
@@ -156,7 +156,7 @@ namespace GameFramework.DataNode
             {
                 if (!IsValidName(name))
                 {
-                    throw new GameFrameworkException("Name is invalid.");
+                    throw new OhMyPackageException("Name is invalid.");
                 }
 
                 if (m_Childs == null)
@@ -194,7 +194,7 @@ namespace GameFramework.DataNode
             {
                 if (!IsValidName(name))
                 {
-                    throw new GameFrameworkException("Name is invalid.");
+                    throw new OhMyPackageException("Name is invalid.");
                 }
 
                 if (m_Childs == null)
@@ -260,7 +260,7 @@ namespace GameFramework.DataNode
             {
                 if (results == null)
                 {
-                    throw new GameFrameworkException("Results is invalid.");
+                    throw new OhMyPackageException("Results is invalid.");
                 }
 
                 results.Clear();

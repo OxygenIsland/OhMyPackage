@@ -1,9 +1,9 @@
 ﻿using System.Globalization;
-using GameFramework.Core.Framework;
-using GameFramework.ObjectPool;
+using OhMyPackage.Core.Framework;
+using OhMyPackage.ObjectPool;
 using UnityEngine;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public sealed partial class Debugger
     {

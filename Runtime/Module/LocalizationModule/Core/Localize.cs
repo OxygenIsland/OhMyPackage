@@ -11,7 +11,7 @@ using UnityEditor.Events;
 using UnityEditor;
 #endif
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     [AddComponentMenu("I2/Localization/I2 Localize")]
     public class Localize : MonoBehaviour

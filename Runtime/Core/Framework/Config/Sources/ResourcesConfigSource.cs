@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 using NLog;
 using UnityEngine;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 从 Unity <c>Resources</c> 文件夹加载 JSON 配置的数据源。

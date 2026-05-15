@@ -4,7 +4,7 @@ using System.Collections.Generic;
     using UnityEngine.InputSystem;
 #endif
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     public class BaseSpecializationManager
     {

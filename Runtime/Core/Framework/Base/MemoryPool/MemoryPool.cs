@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 内存池。

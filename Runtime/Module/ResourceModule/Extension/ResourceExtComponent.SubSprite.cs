@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using YooAsset;
 
-namespace GameFramework.Resource
+namespace OhMyPackage.Resource
 {
     /// <summary>
     /// 资源组件拓展。
@@ -53,7 +53,7 @@ namespace GameFramework.Resource
             var assetInfo = YooAssets.GetAssetInfo(location);
             if (assetInfo.IsInvalid)
             {
-                throw new GameFrameworkException($"Invalid location: {location}");
+                throw new OhMyPackageException($"Invalid location: {location}");
             }
 
             await TryWaitingLoading(location);
@@ -68,7 +68,7 @@ namespace GameFramework.Resource
             var subSprite = subAssetsHandle.GetSubAssetObject<Sprite>(spriteName);
             if (subSprite == null)
             {
-                throw new GameFrameworkException($"Invalid sprite name: {spriteName}");
+                throw new OhMyPackageException($"Invalid sprite name: {spriteName}");
             }
             return subSprite;
         }

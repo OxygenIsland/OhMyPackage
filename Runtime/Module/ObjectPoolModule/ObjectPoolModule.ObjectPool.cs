@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using GameFramework.Core.Framework;
+using OhMyPackage.Core.Framework;
 
-namespace GameFramework.ObjectPool
+namespace OhMyPackage.ObjectPool
 {
     internal sealed partial class ObjectPoolModule : Module, IObjectPoolModule
     {
@@ -12,7 +12,7 @@ namespace GameFramework.ObjectPool
         /// <typeparam name="T">对象类型。</typeparam>
         private sealed class ObjectPool<T> : ObjectPoolBase, IObjectPool<T> where T : ObjectBase
         {
-            private readonly GameFrameworkMultiDictionary<string, Object<T>> _objects;
+            private readonly OhMyPackageMultiDictionary<string, Object<T>> _objects;
             private readonly Dictionary<object, Object<T>> _objectMap;
             private readonly ReleaseObjectFilterCallback<T> _defaultReleaseObjectFilterCallback;
             private readonly List<T> _cachedCanReleaseObjects;
@@ -36,7 +36,7 @@ namespace GameFramework.ObjectPool
             public ObjectPool(string name, bool allowMultiSpawn, float autoReleaseInterval, int capacity, float expireTime, int priority)
                 : base(name)
             {
-                _objects = new GameFrameworkMultiDictionary<string, Object<T>>();
+                _objects = new OhMyPackageMultiDictionary<string, Object<T>>();
                 _objectMap = new Dictionary<object, Object<T>>();
                 _defaultReleaseObjectFilterCallback = DefaultReleaseObjectFilterCallback;
                 _cachedCanReleaseObjects = new List<T>();
@@ -95,7 +95,7 @@ namespace GameFramework.ObjectPool
                 {
                     if (value < 0)
                     {
-                        throw new GameFrameworkException("Capacity is invalid.");
+                        throw new OhMyPackageException("Capacity is invalid.");
                     }
 
                     if (_capacity == value)
@@ -119,7 +119,7 @@ namespace GameFramework.ObjectPool
                 {
                     if (value < 0f)
                     {
-                        throw new GameFrameworkException("ExpireTime is invalid.");
+                        throw new OhMyPackageException("ExpireTime is invalid.");
                     }
 
                     if (Math.Abs(ExpireTime - value) < 0.01f)
@@ -150,7 +150,7 @@ namespace GameFramework.ObjectPool
             {
                 if (obj == null)
                 {
-                    throw new GameFrameworkException("Object is invalid.");
+                    throw new OhMyPackageException("Object is invalid.");
                 }
 
                 Object<T> internalObject = Object<T>.Create(obj, spawned);
@@ -181,10 +181,10 @@ namespace GameFramework.ObjectPool
             {
                 if (name == null)
                 {
-                    throw new GameFrameworkException("Name is invalid.");
+                    throw new OhMyPackageException("Name is invalid.");
                 }
 
-                GameFrameworkLinkedListRange<Object<T>> objectRange = default(GameFrameworkLinkedListRange<Object<T>>);
+                OhMyPackageLinkedListRange<Object<T>> objectRange = default(OhMyPackageLinkedListRange<Object<T>>);
                 if (_objects.TryGetValue(name, out objectRange))
                 {
                     foreach (Object<T> internalObject in objectRange)
@@ -217,10 +217,10 @@ namespace GameFramework.ObjectPool
             {
                 if (name == null)
                 {
-                    throw new GameFrameworkException("Name is invalid.");
+                    throw new OhMyPackageException("Name is invalid.");
                 }
 
-                GameFrameworkLinkedListRange<Object<T>> objectRange = default(GameFrameworkLinkedListRange<Object<T>>);
+                OhMyPackageLinkedListRange<Object<T>> objectRange = default(OhMyPackageLinkedListRange<Object<T>>);
                 if (_objects.TryGetValue(name, out objectRange))
                 {
                     foreach (Object<T> internalObject in objectRange)
@@ -243,7 +243,7 @@ namespace GameFramework.ObjectPool
             {
                 if (obj == null)
                 {
-                    throw new GameFrameworkException("Object is invalid.");
+                    throw new OhMyPackageException("Object is invalid.");
                 }
 
                 Unspawn(obj.Target);
@@ -257,7 +257,7 @@ namespace GameFramework.ObjectPool
             {
                 if (target == null)
                 {
-                    throw new GameFrameworkException("Target is invalid.");
+                    throw new OhMyPackageException("Target is invalid.");
                 }
 
                 Object<T> internalObject = GetObject(target);
@@ -271,7 +271,7 @@ namespace GameFramework.ObjectPool
                 }
                 else
                 {
-                    throw new GameFrameworkException(Utility.Text.Format(
+                    throw new OhMyPackageException(Utility.Text.Format(
                         "Can not find target in object pool '{0}', target type is '{1}', target value is '{2}'.", new TypeNamePair(typeof(T), Name),
                         target.GetType().FullName, target));
                 }
@@ -286,7 +286,7 @@ namespace GameFramework.ObjectPool
             {
                 if (obj == null)
                 {
-                    throw new GameFrameworkException("Object is invalid.");
+                    throw new OhMyPackageException("Object is invalid.");
                 }
 
                 SetLocked(obj.Target, locked);
@@ -301,7 +301,7 @@ namespace GameFramework.ObjectPool
             {
                 if (target == null)
                 {
-                    throw new GameFrameworkException("Target is invalid.");
+                    throw new OhMyPackageException("Target is invalid.");
                 }
 
                 Object<T> internalObject = GetObject(target);
@@ -311,7 +311,7 @@ namespace GameFramework.ObjectPool
                 }
                 else
                 {
-                    throw new GameFrameworkException(Utility.Text.Format(
+                    throw new OhMyPackageException(Utility.Text.Format(
                         "Can not find target in object pool '{0}', target type is '{1}', target value is '{2}'.", new TypeNamePair(typeof(T), Name),
                         target.GetType().FullName, target));
                 }
@@ -326,7 +326,7 @@ namespace GameFramework.ObjectPool
             {
                 if (obj == null)
                 {
-                    throw new GameFrameworkException("Object is invalid.");
+                    throw new OhMyPackageException("Object is invalid.");
                 }
 
                 SetPriority(obj.Target, priority);
@@ -341,7 +341,7 @@ namespace GameFramework.ObjectPool
             {
                 if (target == null)
                 {
-                    throw new GameFrameworkException("Target is invalid.");
+                    throw new OhMyPackageException("Target is invalid.");
                 }
 
                 Object<T> internalObject = GetObject(target);
@@ -351,7 +351,7 @@ namespace GameFramework.ObjectPool
                 }
                 else
                 {
-                    throw new GameFrameworkException(Utility.Text.Format(
+                    throw new OhMyPackageException(Utility.Text.Format(
                         "Can not find target in object pool '{0}', target type is '{1}', target value is '{2}'.", new TypeNamePair(typeof(T), Name),
                         target.GetType().FullName, target));
                 }
@@ -366,7 +366,7 @@ namespace GameFramework.ObjectPool
             {
                 if (obj == null)
                 {
-                    throw new GameFrameworkException("Object is invalid.");
+                    throw new OhMyPackageException("Object is invalid.");
                 }
 
                 return ReleaseObject(obj.Target);
@@ -381,7 +381,7 @@ namespace GameFramework.ObjectPool
             {
                 if (target == null)
                 {
-                    throw new GameFrameworkException("Target is invalid.");
+                    throw new OhMyPackageException("Target is invalid.");
                 }
 
                 Object<T> internalObject = GetObject(target);
@@ -438,7 +438,7 @@ namespace GameFramework.ObjectPool
             {
                 if (releaseObjectFilterCallback == null)
                 {
-                    throw new GameFrameworkException("Release object filter callback is invalid.");
+                    throw new OhMyPackageException("Release object filter callback is invalid.");
                 }
 
                 if (toReleaseCount < 0)
@@ -486,7 +486,7 @@ namespace GameFramework.ObjectPool
             public override ObjectInfo[] GetAllObjectInfos()
             {
                 List<ObjectInfo> results = new List<ObjectInfo>();
-                foreach (KeyValuePair<string, GameFrameworkLinkedListRange<Object<T>>> objectRanges in _objects)
+                foreach (KeyValuePair<string, OhMyPackageLinkedListRange<Object<T>>> objectRanges in _objects)
                 {
                     foreach (Object<T> internalObject in objectRanges.Value)
                     {
@@ -527,7 +527,7 @@ namespace GameFramework.ObjectPool
             {
                 if (target == null)
                 {
-                    throw new GameFrameworkException("Target is invalid.");
+                    throw new OhMyPackageException("Target is invalid.");
                 }
 
                 Object<T> internalObject = null;
@@ -543,7 +543,7 @@ namespace GameFramework.ObjectPool
             {
                 if (results == null)
                 {
-                    throw new GameFrameworkException("Results is invalid.");
+                    throw new OhMyPackageException("Results is invalid.");
                 }
 
                 results.Clear();

@@ -1,6 +1,6 @@
-using GameFramework.ObjectPool;
+using OhMyPackage.ObjectPool;
 
-namespace GameFramework.Resource
+namespace OhMyPackage.Resource
 {
     public class AssetItemObject : ObjectBase
     {

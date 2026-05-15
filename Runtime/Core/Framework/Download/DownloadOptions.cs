@@ -3,7 +3,7 @@
 // -------------------------------------------------------
 using System;
 
-namespace GameFramework.Download
+namespace OhMyPackage.Download
 {
     /// <summary>
     /// 单次下载任务的配置选项。

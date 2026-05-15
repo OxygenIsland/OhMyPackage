@@ -1,6 +1,6 @@
 ﻿using YooAsset;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 音频数据。

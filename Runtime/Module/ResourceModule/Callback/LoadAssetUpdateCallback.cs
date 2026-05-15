@@ -1,4 +1,4 @@
-﻿namespace GameFramework.Resource
+﻿namespace OhMyPackage.Resource
 {
     /// <summary>
     /// 加载资源更新回调函数。

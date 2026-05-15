@@ -2,7 +2,7 @@
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
 	[Serializable]
 	public class EventCallback

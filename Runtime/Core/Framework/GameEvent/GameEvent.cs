@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GameFramework.Event
+namespace OhMyPackage.Event
 {
     /// <summary>
     /// 游戏全局事件类。

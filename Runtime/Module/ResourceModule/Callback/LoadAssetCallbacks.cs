@@ -1,4 +1,4 @@
-namespace GameFramework.Resource
+namespace OhMyPackage.Resource
 {
     /// <summary>
     /// 加载资源回调函数集。
@@ -48,7 +48,7 @@ namespace GameFramework.Resource
         {
             if (loadAssetSuccessCallback == null)
             {
-                throw new GameFrameworkException("Load asset success callback is invalid.");
+                throw new OhMyPackageException("Load asset success callback is invalid.");
             }
 
             _loadAssetSuccessCallback = loadAssetSuccessCallback;

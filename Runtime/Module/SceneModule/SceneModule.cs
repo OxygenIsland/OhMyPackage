@@ -4,10 +4,10 @@ using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
 using SceneHandle = YooAsset.SceneHandle;
 using YooAsset;
-using GameFramework.Core.Framework;
-using GameFramework.Resource;
+using OhMyPackage.Core.Framework;
+using OhMyPackage.Resource;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     internal class SceneModule : Module, ISceneModule
     {

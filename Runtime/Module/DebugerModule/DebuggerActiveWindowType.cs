@@ -1,4 +1,4 @@
-﻿namespace GameFramework
+﻿namespace OhMyPackage
 {
     /// <summary>
     /// 调试器激活窗口类型。

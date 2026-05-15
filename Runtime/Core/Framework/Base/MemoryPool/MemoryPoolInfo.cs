@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 内存池信息。

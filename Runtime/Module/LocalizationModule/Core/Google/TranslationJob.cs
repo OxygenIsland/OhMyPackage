@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.Networking;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     using TranslationDictionary = Dictionary<string, TranslationQuery>;
 

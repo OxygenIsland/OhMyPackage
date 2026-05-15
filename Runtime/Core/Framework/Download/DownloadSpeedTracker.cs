@@ -4,7 +4,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace GameFramework.Download
+namespace OhMyPackage.Download
 {
     /// <summary>
     /// 滑动时间窗口下载速度计算器（线程安全）。

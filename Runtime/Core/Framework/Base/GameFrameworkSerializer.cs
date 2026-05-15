@@ -1,20 +1,20 @@
 ﻿//------------------------------------------------------------
 // Game Framework
 // Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
+// Homepage: https://OhMyPackage.cn/
+// Feedback: mailto:ellan@OhMyPackage.cn
 //------------------------------------------------------------
 
 using System.Collections.Generic;
 using System.IO;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 游戏框架序列化器基类。
     /// </summary>
     /// <typeparam name="T">要序列化的数据类型。</typeparam>
-    public abstract class GameFrameworkSerializer<T>
+    public abstract class OhMyPackageSerializer<T>
     {
         private readonly Dictionary<byte, SerializeCallback> m_SerializeCallbacks;
         private readonly Dictionary<byte, DeserializeCallback> m_DeserializeCallbacks;
@@ -24,7 +24,7 @@ namespace GameFramework
         /// <summary>
         /// 初始化游戏框架序列化器基类的新实例。
         /// </summary>
-        public GameFrameworkSerializer()
+        public OhMyPackageSerializer()
         {
             m_SerializeCallbacks = new Dictionary<byte, SerializeCallback>();
             m_DeserializeCallbacks = new Dictionary<byte, DeserializeCallback>();
@@ -65,7 +65,7 @@ namespace GameFramework
         {
             if (callback == null)
             {
-                throw new GameFrameworkException("Serialize callback is invalid.");
+                throw new OhMyPackageException("Serialize callback is invalid.");
             }
 
             m_SerializeCallbacks[version] = callback;
@@ -84,7 +84,7 @@ namespace GameFramework
         {
             if (callback == null)
             {
-                throw new GameFrameworkException("Deserialize callback is invalid.");
+                throw new OhMyPackageException("Deserialize callback is invalid.");
             }
 
             m_DeserializeCallbacks[version] = callback;
@@ -99,7 +99,7 @@ namespace GameFramework
         {
             if (callback == null)
             {
-                throw new GameFrameworkException("Try get value callback is invalid.");
+                throw new OhMyPackageException("Try get value callback is invalid.");
             }
 
             m_TryGetValueCallbacks[version] = callback;
@@ -115,7 +115,7 @@ namespace GameFramework
         {
             if (m_SerializeCallbacks.Count <= 0)
             {
-                throw new GameFrameworkException("No serialize callback registered.");
+                throw new OhMyPackageException("No serialize callback registered.");
             }
 
             return Serialize(stream, data, m_LatestSerializeCallbackVersion);
@@ -138,7 +138,7 @@ namespace GameFramework
             SerializeCallback callback = null;
             if (!m_SerializeCallbacks.TryGetValue(version, out callback))
             {
-                throw new GameFrameworkException(Utility.Text.Format("Serialize callback '{0}' is not exist.", version));
+                throw new OhMyPackageException(Utility.Text.Format("Serialize callback '{0}' is not exist.", version));
             }
 
             return callback(stream, data);
@@ -157,14 +157,14 @@ namespace GameFramework
             byte header2 = (byte)stream.ReadByte();
             if (header0 != header[0] || header1 != header[1] || header2 != header[2])
             {
-                throw new GameFrameworkException(Utility.Text.Format("Header is invalid, need '{0}{1}{2}', current '{3}{4}{5}'.", (char)header[0], (char)header[1], (char)header[2], (char)header0, (char)header1, (char)header2));
+                throw new OhMyPackageException(Utility.Text.Format("Header is invalid, need '{0}{1}{2}', current '{3}{4}{5}'.", (char)header[0], (char)header[1], (char)header[2], (char)header0, (char)header1, (char)header2));
             }
 
             byte version = (byte)stream.ReadByte();
             DeserializeCallback callback = null;
             if (!m_DeserializeCallbacks.TryGetValue(version, out callback))
             {
-                throw new GameFrameworkException(Utility.Text.Format("Deserialize callback '{0}' is not exist.", version));
+                throw new OhMyPackageException(Utility.Text.Format("Deserialize callback '{0}' is not exist.", version));
             }
 
             return callback(stream);

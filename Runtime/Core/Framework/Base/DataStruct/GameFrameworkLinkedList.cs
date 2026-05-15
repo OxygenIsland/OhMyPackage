@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 游戏框架链表类。
     /// </summary>
     /// <typeparam name="T">指定链表的元素类型。</typeparam>
-    public sealed class GameFrameworkLinkedList<T> : ICollection<T>, IEnumerable<T>, ICollection, IEnumerable
+    public sealed class OhMyPackageLinkedList<T> : ICollection<T>, IEnumerable<T>, ICollection, IEnumerable
     {
         private readonly LinkedList<T> _linkedList;
         private readonly Queue<LinkedListNode<T>> _cachedNodes;
@@ -17,7 +17,7 @@ namespace GameFramework
         /// <summary>
         /// 初始化游戏框架链表类的新实例。
         /// </summary>
-        public GameFrameworkLinkedList()
+        public OhMyPackageLinkedList()
         {
             _linkedList = new LinkedList<T>();
             _cachedNodes = new Queue<LinkedListNode<T>>();
@@ -255,7 +255,7 @@ namespace GameFramework
             LinkedListNode<T> first = _linkedList.First;
             if (first == null)
             {
-                throw new GameFrameworkException("First is invalid.");
+                throw new OhMyPackageException("First is invalid.");
             }
 
             _linkedList.RemoveFirst();
@@ -270,7 +270,7 @@ namespace GameFramework
             LinkedListNode<T> last = _linkedList.Last;
             if (last == null)
             {
-                throw new GameFrameworkException("Last is invalid.");
+                throw new OhMyPackageException("Last is invalid.");
             }
 
             _linkedList.RemoveLast();
@@ -347,7 +347,7 @@ namespace GameFramework
             {
                 if (linkedList == null)
                 {
-                    throw new GameFrameworkException("Linked list is invalid.");
+                    throw new OhMyPackageException("Linked list is invalid.");
                 }
 
                 _enumerator = linkedList.GetEnumerator();

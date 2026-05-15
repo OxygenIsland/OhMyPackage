@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GameFramework.Event
+namespace OhMyPackage.Event
 {
     /// <summary>
     /// 事件分组枚举。

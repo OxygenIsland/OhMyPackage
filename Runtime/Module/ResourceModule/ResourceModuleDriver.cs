@@ -1,10 +1,10 @@
 using System;
-using GameFramework.Core.Framework;
+using OhMyPackage.Core.Framework;
 using UnityEngine;
 using UnityEngine.Serialization;
 using YooAsset;
 
-namespace GameFramework.Resource
+namespace OhMyPackage.Resource
 {
     /// <summary>
     /// 资源组件。

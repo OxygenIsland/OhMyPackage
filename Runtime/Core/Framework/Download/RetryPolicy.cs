@@ -3,7 +3,7 @@
 // -------------------------------------------------------
 using System;
 
-namespace GameFramework.Download
+namespace OhMyPackage.Download
 {
     /// <summary>
     /// 下载失败重试策略。

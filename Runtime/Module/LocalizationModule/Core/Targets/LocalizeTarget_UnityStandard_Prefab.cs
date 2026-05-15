@@ -3,7 +3,7 @@ using UnityEngine;
 
 #pragma warning disable 618
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     public class LocalizeTargetDesc_Prefab : LocalizeTargetDesc<LocalizeTarget_UnityStandard_Prefab>
     {

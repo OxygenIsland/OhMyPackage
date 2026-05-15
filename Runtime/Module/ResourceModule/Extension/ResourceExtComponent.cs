@@ -2,8 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
-using GameFramework.Core.Framework;
-using GameFramework.ObjectPool;
+using OhMyPackage.Core.Framework;
+using OhMyPackage.ObjectPool;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Object = UnityEngine.Object;
@@ -11,7 +11,7 @@ using Object = UnityEngine.Object;
 using Sirenix.OdinInspector;
 #endif
 
-namespace GameFramework.Resource
+namespace OhMyPackage.Resource
 {
     /// <summary>
     /// 资源组件拓展。

@@ -8,7 +8,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace GameFramework.Download
+namespace OhMyPackage.Download
 {
     /// <summary>
     /// 基于 <see cref="UnityWebRequest"/> 的默认 HTTP 下载处理器。

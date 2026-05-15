@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     // Simple String Obfucator 
     // (not particularly safe, but will stop most players from hacking your strings and its FAST)

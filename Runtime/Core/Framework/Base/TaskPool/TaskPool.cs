@@ -1,13 +1,13 @@
 ﻿//------------------------------------------------------------
 // Game Framework
 // Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
+// Homepage: https://OhMyPackage.cn/
+// Feedback: mailto:ellan@OhMyPackage.cn
 //------------------------------------------------------------
 
 using System.Collections.Generic;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 任务池。
@@ -16,8 +16,8 @@ namespace GameFramework
     internal sealed class TaskPool<T> where T : TaskBase
     {
         private readonly Stack<ITaskAgent<T>> m_FreeAgents;
-        private readonly GameFrameworkLinkedList<ITaskAgent<T>> m_WorkingAgents;
-        private readonly GameFrameworkLinkedList<T> m_WaitingTasks;
+        private readonly OhMyPackageLinkedList<ITaskAgent<T>> m_WorkingAgents;
+        private readonly OhMyPackageLinkedList<T> m_WaitingTasks;
         private bool m_Paused;
 
         /// <summary>
@@ -26,8 +26,8 @@ namespace GameFramework
         public TaskPool()
         {
             m_FreeAgents = new Stack<ITaskAgent<T>>();
-            m_WorkingAgents = new GameFrameworkLinkedList<ITaskAgent<T>>();
-            m_WaitingTasks = new GameFrameworkLinkedList<T>();
+            m_WorkingAgents = new OhMyPackageLinkedList<ITaskAgent<T>>();
+            m_WaitingTasks = new OhMyPackageLinkedList<T>();
             m_Paused = false;
         }
 
@@ -127,7 +127,7 @@ namespace GameFramework
         {
             if (agent == null)
             {
-                throw new GameFrameworkException("Task agent is invalid.");
+                throw new OhMyPackageException("Task agent is invalid.");
             }
 
             agent.Initialize();
@@ -182,7 +182,7 @@ namespace GameFramework
         {
             if (results == null)
             {
-                throw new GameFrameworkException("Results is invalid.");
+                throw new OhMyPackageException("Results is invalid.");
             }
 
             results.Clear();
@@ -234,7 +234,7 @@ namespace GameFramework
         {
             if (results == null)
             {
-                throw new GameFrameworkException("Results is invalid.");
+                throw new OhMyPackageException("Results is invalid.");
             }
 
             results.Clear();

@@ -1,6 +1,6 @@
 // ============================================================
 // WebRequestOptions.cs
-// 对标 GameFramework 中 AddWebRequest 各重载散落的参数，
+// 对标 OhMyPackage 中 AddWebRequest 各重载散落的参数，
 // 将它们集中到一个可选配置对象中，保持调用处整洁。
 // ============================================================
 
@@ -13,9 +13,9 @@ namespace MyGame.Toolkit.Network
     /// <para>
     /// 所有字段均有默认值；只需设置与默认值不同的字段。
     /// 对应关系：<br/>
-    ///   <see cref="Tag"/>      → GameFramework AddWebRequest(tag)      按组管理与取消<br/>
-    ///   <see cref="Priority"/> → GameFramework AddWebRequest(priority)  并发槽优先级调度<br/>
-    ///   <see cref="Timeout"/>  → GameFramework IWebRequestManager.Timeout 超时（秒）<br/>
+    ///   <see cref="Tag"/>      → OhMyPackage AddWebRequest(tag)      按组管理与取消<br/>
+    ///   <see cref="Priority"/> → OhMyPackage AddWebRequest(priority)  并发槽优先级调度<br/>
+    ///   <see cref="Timeout"/>  → OhMyPackage IWebRequestManager.Timeout 超时（秒）<br/>
     ///   <see cref="Token"/>    → Authorization Bearer Token<br/>
     ///   <see cref="Headers"/>  → 附加 HTTP 请求头<br/>
     ///   <see cref="QueryParams"/> → URL 查询字符串参数

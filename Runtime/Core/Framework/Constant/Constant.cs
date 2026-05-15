@@ -1,4 +1,4 @@
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 常用设置相关常量。

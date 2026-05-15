@@ -1,4 +1,4 @@
-﻿namespace GameFramework
+﻿namespace OhMyPackage
 {
     /// <summary>
     /// 调试器窗口接口。

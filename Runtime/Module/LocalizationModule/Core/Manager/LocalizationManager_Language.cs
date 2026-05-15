@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Threading;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     public static partial class LocalizationManager
     {

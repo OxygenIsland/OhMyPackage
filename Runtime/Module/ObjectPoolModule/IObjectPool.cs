@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GameFramework.ObjectPool
+namespace OhMyPackage.ObjectPool
 {
     /// <summary>
     /// 对象池接口。

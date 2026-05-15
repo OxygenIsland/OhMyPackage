@@ -1,16 +1,16 @@
 ﻿//------------------------------------------------------------
 // Game Framework
 // Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
+// Homepage: https://OhMyPackage.cn/
+// Feedback: mailto:ellan@OhMyPackage.cn
 //------------------------------------------------------------
 
 using System;
 using System.IO;
 
-namespace GameFramework.Network
+namespace OhMyPackage.Network
 {
-    internal sealed partial class NetworkManager : GameFrameworkModule, INetworkManager
+    internal sealed partial class NetworkManager : OhMyPackageModule, INetworkManager
     {
         private sealed class ReceiveState : IDisposable
         {
@@ -51,7 +51,7 @@ namespace GameFramework.Network
             {
                 if (packetHeader == null)
                 {
-                    throw new GameFrameworkException("Packet header is invalid.");
+                    throw new OhMyPackageException("Packet header is invalid.");
                 }
 
                 Reset(packetHeader.PacketLength, packetHeader);
@@ -86,7 +86,7 @@ namespace GameFramework.Network
             {
                 if (targetLength < 0)
                 {
-                    throw new GameFrameworkException("Target length is invalid.");
+                    throw new OhMyPackageException("Target length is invalid.");
                 }
 
                 m_Stream.Position = 0L;

@@ -1,6 +1,6 @@
 using System;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
 	public enum eLanguageDataFlags
 	{

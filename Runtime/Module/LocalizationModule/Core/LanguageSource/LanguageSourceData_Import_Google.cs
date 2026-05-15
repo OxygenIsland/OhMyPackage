@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
 	public partial class LanguageSourceData
 	{

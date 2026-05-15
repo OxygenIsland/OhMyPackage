@@ -1,14 +1,14 @@
 ﻿//------------------------------------------------------------
 // Game Framework
 // Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
+// Homepage: https://OhMyPackage.cn/
+// Feedback: mailto:ellan@OhMyPackage.cn
 //------------------------------------------------------------
 
 using System;
 using System.Collections.Generic;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public static partial class ReferencePool
     {
@@ -93,7 +93,7 @@ namespace GameFramework
             {
                 if (typeof(T) != m_ReferenceType)
                 {
-                    throw new GameFrameworkException("Type is invalid.");
+                    throw new OhMyPackageException("Type is invalid.");
                 }
 
                 m_UsingReferenceCount++;
@@ -133,7 +133,7 @@ namespace GameFramework
                 {
                     if (m_EnableStrictCheck && m_References.Contains(reference))
                     {
-                        throw new GameFrameworkException("The reference has been released.");
+                        throw new OhMyPackageException("The reference has been released.");
                     }
 
                     m_References.Enqueue(reference);
@@ -147,7 +147,7 @@ namespace GameFramework
             {
                 if (typeof(T) != m_ReferenceType)
                 {
-                    throw new GameFrameworkException("Type is invalid.");
+                    throw new OhMyPackageException("Type is invalid.");
                 }
 
                 lock (m_References)

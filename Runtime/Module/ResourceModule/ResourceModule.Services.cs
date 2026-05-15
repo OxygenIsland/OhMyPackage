@@ -4,7 +4,7 @@ using System.IO;
 using UnityEngine;
 using YooAsset;
 
-namespace GameFramework.Resource
+namespace OhMyPackage.Resource
 {
     /// <summary>
     /// 远端资源地址查询服务类

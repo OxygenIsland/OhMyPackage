@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     [AddComponentMenu("I2/Localization/I2 Localize Callback")]
 	public class CustomLocalizeCallback : MonoBehaviour

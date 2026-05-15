@@ -1,7 +1,7 @@
 #if SVG
 using UnityEngine;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     #if UNITY_EDITOR
     [UnityEditor.InitializeOnLoad] 

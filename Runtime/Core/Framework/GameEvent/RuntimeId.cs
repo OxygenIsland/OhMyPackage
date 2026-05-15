@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace GameFramework.Event
+namespace OhMyPackage.Event
 {
     /// <summary>
     /// 运行时Id。

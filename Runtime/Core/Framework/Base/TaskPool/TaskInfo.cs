@@ -1,13 +1,13 @@
 ﻿//------------------------------------------------------------
 // Game Framework
 // Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
+// Homepage: https://OhMyPackage.cn/
+// Feedback: mailto:ellan@OhMyPackage.cn
 //------------------------------------------------------------
 
 using System.Runtime.InteropServices;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 任务信息。
@@ -63,7 +63,7 @@ namespace GameFramework
             {
                 if (!m_IsValid)
                 {
-                    throw new GameFrameworkException("Data is invalid.");
+                    throw new OhMyPackageException("Data is invalid.");
                 }
 
                 return m_SerialId;
@@ -79,7 +79,7 @@ namespace GameFramework
             {
                 if (!m_IsValid)
                 {
-                    throw new GameFrameworkException("Data is invalid.");
+                    throw new OhMyPackageException("Data is invalid.");
                 }
 
                 return m_Tag;
@@ -95,7 +95,7 @@ namespace GameFramework
             {
                 if (!m_IsValid)
                 {
-                    throw new GameFrameworkException("Data is invalid.");
+                    throw new OhMyPackageException("Data is invalid.");
                 }
 
                 return m_Priority;
@@ -111,7 +111,7 @@ namespace GameFramework
             {
                 if (!m_IsValid)
                 {
-                    throw new GameFrameworkException("Data is invalid.");
+                    throw new OhMyPackageException("Data is invalid.");
                 }
 
                 return m_UserData;
@@ -127,7 +127,7 @@ namespace GameFramework
             {
                 if (!m_IsValid)
                 {
-                    throw new GameFrameworkException("Data is invalid.");
+                    throw new OhMyPackageException("Data is invalid.");
                 }
 
                 return m_Status;
@@ -143,7 +143,7 @@ namespace GameFramework
             {
                 if (!m_IsValid)
                 {
-                    throw new GameFrameworkException("Data is invalid.");
+                    throw new OhMyPackageException("Data is invalid.");
                 }
 
                 return m_Description;

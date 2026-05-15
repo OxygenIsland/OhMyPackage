@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-namespace GameFramework.Core.Framework
+namespace OhMyPackage.Core.Framework
 {
     /// <summary>
     /// 强制更新类型。

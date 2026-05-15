@@ -1,7 +1,7 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 日志上报服务接口，供业务层注入使用。

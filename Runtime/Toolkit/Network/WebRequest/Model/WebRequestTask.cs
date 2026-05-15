@@ -1,9 +1,9 @@
 // ============================================================
 // WebRequestTask.cs
-// 对标 GameFramework.WebRequest.WebRequestManager.WebRequestTask。
+// 对标 OhMyPackage.WebRequest.WebRequestManager.WebRequestTask。
 // 持有单次请求的全部元信息与取消令牌对。
 //
-// 取消令牌设计（对标 GameFramework Agent/Task 分离）：
+// 取消令牌设计（对标 OhMyPackage Agent/Task 分离）：
 //   TaskCts   ── 任务独立令牌，由 CancelRequest(serialId) 触发取消
 //   LinkedCts ── 联合令牌：TaskCts + 调用方 CancellationToken
 //                传递给底层 HTTP 调用，任一方取消均能终止请求
@@ -16,7 +16,7 @@ namespace MyGame.Toolkit.Network
 {
     /// <summary>
     /// Web 请求任务内部数据容器（仅供 <see cref="WebRequestService"/> 使用）。
-    /// 对标 GameFramework 中的 WebRequestTask。
+    /// 对标 OhMyPackage 中的 WebRequestTask。
     /// </summary>
     internal sealed class WebRequestTask : IDisposable
     {
@@ -24,7 +24,7 @@ namespace MyGame.Toolkit.Network
 
         // ── 元信息 ────────────────────────────────────────────────────────
 
-        /// <summary>全局唯一序列编号，从 1 起递增。对标 GameFramework TaskBase.SerialId。</summary>
+        /// <summary>全局唯一序列编号，从 1 起递增。对标 OhMyPackage TaskBase.SerialId。</summary>
         public int SerialId { get; }
 
         /// <summary>请求完整 URI（domain + path）。</summary>
@@ -92,7 +92,7 @@ namespace MyGame.Toolkit.Network
 
         // ── 工具方法 ──────────────────────────────────────────────────────
 
-        /// <summary>生成当前状态的只读快照（对标 GameFramework TaskInfo）。</summary>
+        /// <summary>生成当前状态的只读快照（对标 OhMyPackage TaskInfo）。</summary>
         public WebRequestTaskInfo ToInfo() =>
             new WebRequestTaskInfo(SerialId, Uri, Tag, Priority, Status, CreateTime);
 

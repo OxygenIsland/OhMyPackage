@@ -1,10 +1,10 @@
-﻿using GameFramework.Core.Framework;
-using GameFramework.Resource;
+﻿using OhMyPackage.Core.Framework;
+using OhMyPackage.Resource;
 using UnityEngine;
 using UnityEngine.Audio;
 using YooAsset;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 音频代理辅助器。

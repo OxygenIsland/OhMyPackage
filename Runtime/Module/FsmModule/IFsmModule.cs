@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GameFramework.Fsm
+namespace OhMyPackage.Fsm
 {
     /// <summary>
     /// 有限状态机管理器。

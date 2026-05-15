@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections;
 using Cysharp.Threading.Tasks;
-using GameFramework.Core.Framework;
-using GameFramework.Fsm;
+using OhMyPackage.Core.Framework;
+using OhMyPackage.Fsm;
 using UnityEngine;
 
-namespace GameFramework.Procedure
+namespace OhMyPackage.Procedure
 {
-    [CreateAssetMenu(menuName = "GameFramework/ProcedureSetting", fileName = "ProcedureSetting")]
+    [CreateAssetMenu(menuName = "OhMyPackage/ProcedureSetting", fileName = "ProcedureSetting")]
     public sealed class ProcedureSetting : ScriptableObject
     {
         private static readonly NLog.Logger Log = NLog.LogManager.GetCurrentClassLogger();

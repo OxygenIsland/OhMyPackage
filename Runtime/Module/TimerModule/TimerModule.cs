@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using GameFramework.Core.Framework;
+using OhMyPackage.Core.Framework;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public delegate void TimerHandler(object[] args);
 

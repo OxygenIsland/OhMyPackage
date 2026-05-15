@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 内存池对象基类。

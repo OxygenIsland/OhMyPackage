@@ -1,7 +1,7 @@
-﻿using GameFramework.Fsm;
-using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
+﻿using OhMyPackage.Fsm;
+using ProcedureOwner = OhMyPackage.Fsm.IFsm<OhMyPackage.Procedure.IProcedureManager>;
 
-namespace GameFramework.Procedure
+namespace OhMyPackage.Procedure
 {
     /// <summary>
     /// 流程基类。

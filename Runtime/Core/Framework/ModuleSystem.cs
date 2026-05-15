@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GameFramework.Core.Framework
+namespace OhMyPackage.Core.Framework
 {
     /// <summary>
     /// 游戏框架模块实现类管理系统。
@@ -70,7 +70,7 @@ namespace GameFramework.Core.Framework
             Type interfaceType = typeof(T);
             if (!interfaceType.IsInterface)
             {
-                throw new GameFrameworkException(Utility.Text.Format("You must get module by interface, but '{0}' is not.", interfaceType.FullName));
+                throw new OhMyPackageException(Utility.Text.Format("You must get module by interface, but '{0}' is not.", interfaceType.FullName));
             }
 
             if (_moduleMaps.TryGetValue(interfaceType, out Module module))
@@ -82,7 +82,7 @@ namespace GameFramework.Core.Framework
             Type moduleType = Type.GetType(moduleName);
             if (moduleType == null)
             {
-                throw new GameFrameworkException(Utility.Text.Format("Can not find Game Framework module type '{0}'.", moduleName));
+                throw new OhMyPackageException(Utility.Text.Format("Can not find Game Framework module type '{0}'.", moduleName));
             }
 
             return GetModule(moduleType) as T;
@@ -109,7 +109,7 @@ namespace GameFramework.Core.Framework
             Module module = (Module)Activator.CreateInstance(moduleType);
             if (module == null)
             {
-                throw new GameFrameworkException(Utility.Text.Format("Can not create module '{0}'.", moduleType.FullName));
+                throw new OhMyPackageException(Utility.Text.Format("Can not create module '{0}'.", moduleType.FullName));
             }
 
             _moduleMaps[moduleType] = module;
@@ -124,13 +124,13 @@ namespace GameFramework.Core.Framework
         /// </summary>
         /// <param name="module">Module。</param>
         /// <returns>Module实例。</returns>
-        /// <exception cref="GameFrameworkException">框架异常。</exception>
+        /// <exception cref="OhMyPackageException">框架异常。</exception>
         public static T RegisterModule<T>(Module module) where T : class
         {
             Type interfaceType = typeof(T);
             if (!interfaceType.IsInterface)
             {
-                throw new GameFrameworkException(Utility.Text.Format("You must get module by interface, but '{0}' is not.", interfaceType.FullName));
+                throw new OhMyPackageException(Utility.Text.Format("You must get module by interface, but '{0}' is not.", interfaceType.FullName));
             }
 
             _moduleMaps[interfaceType] = module;

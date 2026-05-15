@@ -1,6 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public interface ILocalizationModule
     {

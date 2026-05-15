@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     internal sealed partial class DebuggerModule : IDebuggerModule
     {
@@ -194,7 +194,7 @@ namespace GameFramework
             {
                 if (string.IsNullOrEmpty(path))
                 {
-                    throw new GameFrameworkException("Path is invalid.");
+                    throw new OhMyPackageException("Path is invalid.");
                 }
 
                 int pos = path.IndexOf('/');
@@ -202,7 +202,7 @@ namespace GameFramework
                 {
                     if (InternalGetDebuggerWindow(path) != null)
                     {
-                        throw new GameFrameworkException("Debugger window has been registered.");
+                        throw new OhMyPackageException("Debugger window has been registered.");
                     }
 
                     _debuggerWindows.Add(new KeyValuePair<string, IDebuggerWindow>(path, debuggerWindow));
@@ -217,7 +217,7 @@ namespace GameFramework
                     {
                         if (InternalGetDebuggerWindow(debuggerWindowGroupName) != null)
                         {
-                            throw new GameFrameworkException("Debugger window has been registered, can not create debugger window group.");
+                            throw new OhMyPackageException("Debugger window has been registered, can not create debugger window group.");
                         }
 
                         debuggerWindowGroup = new DebuggerWindowGroup();

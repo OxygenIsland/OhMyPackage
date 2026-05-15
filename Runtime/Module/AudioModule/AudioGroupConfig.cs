@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 音频轨道组配置。

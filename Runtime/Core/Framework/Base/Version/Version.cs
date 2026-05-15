@@ -1,29 +1,29 @@
 ﻿//------------------------------------------------------------
 // Game Framework
 // Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
+// Homepage: https://OhMyPackage.cn/
+// Feedback: mailto:ellan@OhMyPackage.cn
 //------------------------------------------------------------
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 版本号类。
     /// </summary>
     public static partial class Version
     {
-        private const string GameFrameworkVersionString = "2021.05.31";
+        private const string OhMyPackageVersionString = "2021.05.31";
 
         private static IVersionHelper s_VersionHelper = null;
 
         /// <summary>
         /// 获取游戏框架版本号。
         /// </summary>
-        public static string GameFrameworkVersion
+        public static string OhMyPackageVersion
         {
             get
             {
-                return GameFrameworkVersionString;
+                return OhMyPackageVersionString;
             }
         }
 

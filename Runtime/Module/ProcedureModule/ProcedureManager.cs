@@ -1,8 +1,8 @@
 ﻿using System;
-using GameFramework.Core.Framework;
-using GameFramework.Fsm;
+using OhMyPackage.Core.Framework;
+using OhMyPackage.Fsm;
 
-namespace GameFramework.Procedure
+namespace OhMyPackage.Procedure
 {
     /// <summary>
     /// 流程管理器。
@@ -36,7 +36,7 @@ namespace GameFramework.Procedure
             {
                 if (_procedureFsm == null)
                 {
-                    throw new GameFrameworkException("You must initialize procedure first.");
+                    throw new OhMyPackageException("You must initialize procedure first.");
                 }
 
                 return (ProcedureBase)_procedureFsm.CurrentState;
@@ -52,7 +52,7 @@ namespace GameFramework.Procedure
             {
                 if (_procedureFsm == null)
                 {
-                    throw new GameFrameworkException("You must initialize procedure first.");
+                    throw new OhMyPackageException("You must initialize procedure first.");
                 }
 
                 return _procedureFsm.CurrentStateTime;
@@ -89,7 +89,7 @@ namespace GameFramework.Procedure
         {
             if (fsmModule == null)
             {
-                throw new GameFrameworkException("FSM manager is invalid.");
+                throw new OhMyPackageException("FSM manager is invalid.");
             }
 
             _fsmModule = fsmModule;
@@ -104,7 +104,7 @@ namespace GameFramework.Procedure
         {
             if (_procedureFsm == null)
             {
-                throw new GameFrameworkException("You must initialize procedure first.");
+                throw new OhMyPackageException("You must initialize procedure first.");
             }
 
             _procedureFsm.Start<T>();
@@ -118,7 +118,7 @@ namespace GameFramework.Procedure
         {
             if (_procedureFsm == null)
             {
-                throw new GameFrameworkException("You must initialize procedure first.");
+                throw new OhMyPackageException("You must initialize procedure first.");
             }
 
             _procedureFsm.Start(procedureType);
@@ -133,7 +133,7 @@ namespace GameFramework.Procedure
         {
             if (_procedureFsm == null)
             {
-                throw new GameFrameworkException("You must initialize procedure first.");
+                throw new OhMyPackageException("You must initialize procedure first.");
             }
 
             return _procedureFsm.HasState<T>();
@@ -148,7 +148,7 @@ namespace GameFramework.Procedure
         {
             if (_procedureFsm == null)
             {
-                throw new GameFrameworkException("You must initialize procedure first.");
+                throw new OhMyPackageException("You must initialize procedure first.");
             }
 
             return _procedureFsm.HasState(procedureType);
@@ -163,7 +163,7 @@ namespace GameFramework.Procedure
         {
             if (_procedureFsm == null)
             {
-                throw new GameFrameworkException("You must initialize procedure first.");
+                throw new OhMyPackageException("You must initialize procedure first.");
             }
 
             return _procedureFsm.GetState<T>();
@@ -178,7 +178,7 @@ namespace GameFramework.Procedure
         {
             if (_procedureFsm == null)
             {
-                throw new GameFrameworkException("You must initialize procedure first.");
+                throw new OhMyPackageException("You must initialize procedure first.");
             }
 
             return (ProcedureBase)_procedureFsm.GetState(procedureType);
@@ -190,12 +190,12 @@ namespace GameFramework.Procedure
         /// </summary>
         /// <param name="procedures">新的的流程。</param>
         /// <returns>是否重启成功。</returns>
-        /// <exception cref="GameFrameworkException">重启异常。</exception>
+        /// <exception cref="OhMyPackageException">重启异常。</exception>
         public bool RestartProcedure(params ProcedureBase[] procedures)
         {
             if (procedures == null || procedures.Length <= 0)
             {
-                throw new GameFrameworkException("RestartProcedure Failed procedures is invalid.");
+                throw new OhMyPackageException("RestartProcedure Failed procedures is invalid.");
             }
 
             if (!_fsmModule.DestroyFsm<IProcedureManager>())

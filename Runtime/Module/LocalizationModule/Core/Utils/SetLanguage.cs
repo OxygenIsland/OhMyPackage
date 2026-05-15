@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
 	[AddComponentMenu("I2/Localization/SetLanguage Button")]
 	public class SetLanguage : MonoBehaviour 

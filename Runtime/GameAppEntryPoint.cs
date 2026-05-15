@@ -1,12 +1,12 @@
 using System;
-using GameFramework;
-using GameFramework.Event;
-using GameFramework.Fsm;
-using GameFramework.Procedure;
+using OhMyPackage;
+using OhMyPackage.Event;
+using OhMyPackage.Fsm;
+using OhMyPackage.Procedure;
 using NLog;
 using VContainer.Unity;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 纯 C# 应用入口。
@@ -36,7 +36,7 @@ namespace GameFramework
 
         public void Tick()
         {
-            GameFrameworkEntry.Update(UnityEngine.Time.deltaTime, UnityEngine.Time.unscaledDeltaTime);
+            OhMyPackageEntry.Update(UnityEngine.Time.deltaTime, UnityEngine.Time.unscaledDeltaTime);
         }
 
         public void Dispose()

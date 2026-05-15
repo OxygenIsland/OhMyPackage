@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace GameFramework.ObjectPool
+namespace OhMyPackage.ObjectPool
 {
     /// <summary>
     /// 对象信息。

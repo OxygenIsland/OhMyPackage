@@ -1,16 +1,16 @@
 ﻿//------------------------------------------------------------
 // Game Framework
 // Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
+// Homepage: https://OhMyPackage.cn/
+// Feedback: mailto:ellan@OhMyPackage.cn
 //------------------------------------------------------------
 
-namespace GameFramework.Network
+namespace OhMyPackage.Network
 {
     /// <summary>
     /// 网络连接关闭事件。
     /// </summary>
-    public sealed class NetworkClosedEventArgs : GameFrameworkEventArgs
+    public sealed class NetworkClosedEventArgs : OhMyPackageEventArgs
     {
         /// <summary>
         /// 初始化网络连接关闭事件的新实例。

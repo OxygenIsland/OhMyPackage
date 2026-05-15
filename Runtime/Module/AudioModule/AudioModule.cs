@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using GameFramework.Core.Framework;
-using GameFramework.Resource;
+using OhMyPackage.Core.Framework;
+using OhMyPackage.Resource;
 using UnityEngine;
 using UnityEngine.Audio;
 using YooAsset;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     internal class AudioModule : Core.Framework.Module, IAudioModule, IUpdateModule
     {
@@ -340,7 +340,7 @@ namespace GameFramework
         /// <param name="audioGroupConfigs">音频轨道组配置。</param>
         /// <param name="instanceRoot">实例化根节点。</param>
         /// <param name="audioMixer">音频混响器。</param>
-        /// <exception cref="GameFrameworkException"></exception>
+        /// <exception cref="OhMyPackageException"></exception>
         public void Initialize(AudioGroupConfig[] audioGroupConfigs, Transform instanceRoot = null, AudioMixer audioMixer = null)
         {
             if (_instanceRoot == null)
@@ -350,7 +350,7 @@ namespace GameFramework
 
             if (audioGroupConfigs == null)
             {
-                throw new GameFrameworkException("AudioGroupConfig[] is invalid.");
+                throw new OhMyPackageException("AudioGroupConfig[] is invalid.");
             }
 
             _audioGroupConfigs = audioGroupConfigs;

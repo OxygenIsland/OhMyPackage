@@ -3,7 +3,7 @@ using UnityEngine;
 
 #pragma warning disable 618
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
     #if UNITY_EDITOR
     [InitializeOnLoad] 

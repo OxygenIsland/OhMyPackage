@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using GameFramework.Core.Framework;
+using OhMyPackage.Core.Framework;
 using UnityEngine;
 using YooAsset;
 
-namespace GameFramework.Resource
+namespace OhMyPackage.Resource
 {
     /// <summary>
     /// 资源管理器接口。

@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using YooAsset;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public interface IAudioModule
     {
@@ -75,7 +75,7 @@ namespace GameFramework
         /// <param name="audioGroupConfigs">音频轨道组配置。</param>
         /// <param name="instanceRoot">实例化根节点。</param>
         /// <param name="audioMixer">音频混响器。</param>
-        /// <exception cref="GameFrameworkException"></exception>
+        /// <exception cref="OhMyPackageException"></exception>
         public void Initialize(AudioGroupConfig[] audioGroupConfigs, Transform instanceRoot = null, AudioMixer audioMixer = null);
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
-using GameFramework.Core.Framework;
+using OhMyPackage.Core.Framework;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 本地化管理模块，负责多语言资源的加载和切换。

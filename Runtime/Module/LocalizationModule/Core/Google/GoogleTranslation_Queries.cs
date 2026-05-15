@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace GameFramework.Localization
+namespace OhMyPackage.Localization
 {
 	using TranslationDictionary = Dictionary<string, TranslationQuery>;
 

@@ -7,7 +7,7 @@ using NLog;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 从 <c>StreamingAssets</c> 目录加载 JSON 配置的数据源。

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public static partial class Utility
     {
@@ -50,7 +50,7 @@ namespace GameFramework
             {
                 if (results == null)
                 {
-                    throw new GameFrameworkException("Results is invalid.");
+                    throw new OhMyPackageException("Results is invalid.");
                 }
 
                 results.Clear();
@@ -69,7 +69,7 @@ namespace GameFramework
             {
                 if (string.IsNullOrEmpty(typeName))
                 {
-                    throw new GameFrameworkException("Type name is invalid.");
+                    throw new OhMyPackageException("Type name is invalid.");
                 }
 
                 Type type = null;

@@ -16,15 +16,15 @@
 //    └── SceneLifetimeScope (可选，各场景独立子容器)
 // ===================================================================
 
-using GameFramework;
-using GameFramework.Event;
-using GameFramework.Fsm;
-using GameFramework.Procedure;
+using OhMyPackage;
+using OhMyPackage.Event;
+using OhMyPackage.Fsm;
+using OhMyPackage.Procedure;
 using MyGame.Scopes.Installers;
 using VContainer;
 using VContainer.Unity;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 根级生命周期作用域（全局唯一）
@@ -35,15 +35,15 @@ namespace GameFramework
         protected override void Configure(IContainerBuilder builder)
         {
             // ── 框架核心模块（Singleton）────────────────────────────────
-            // 使用工厂委托包装 GameFrameworkEntry 的懒加载机制
+            // 使用工厂委托包装 OhMyPackageEntry 的懒加载机制
             // VContainer 保证每个接口在容器生命周期内只实例化一次
             builder.Register<IFsmManager>(
-                _ => GameFrameworkEntry.GetModule<IFsmManager>(),
+                _ => OhMyPackageEntry.GetModule<IFsmManager>(),
                 Lifetime.Singleton);
 
 
             builder.Register<IProcedureManager>(
-                _ => GameFrameworkEntry.GetModule<IProcedureManager>(),
+                _ => OhMyPackageEntry.GetModule<IProcedureManager>(),
                 Lifetime.Singleton);
 
             // ── Toolkit 基础设施模块 ───────────────────────────────────

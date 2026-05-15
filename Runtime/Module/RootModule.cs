@@ -1,10 +1,10 @@
 ﻿using System;
-using GameFramework.Core.Framework;
-using GameFramework.ObjectPool;
-using GameFramework.Resource;
+using OhMyPackage.Core.Framework;
+using OhMyPackage.ObjectPool;
+using OhMyPackage.Resource;
 using UnityEngine;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 基础模块。
@@ -35,13 +35,13 @@ namespace GameFramework
         private Language editorLanguage = Language.Unspecified;
 
         [SerializeField]
-        private string textHelperTypeName = "GameFramework.DefaultTextHelper";
+        private string textHelperTypeName = "OhMyPackage.DefaultTextHelper";
 
         [SerializeField]
-        private string logHelperTypeName = "GameFramework.DefaultLogHelper";
+        private string logHelperTypeName = "OhMyPackage.DefaultLogHelper";
 
         [SerializeField]
-        private string jsonHelperTypeName = "GameFramework.DefaultJsonHelper";
+        private string jsonHelperTypeName = "OhMyPackage.DefaultJsonHelper";
 
         [SerializeField]
         private int frameRate = 120;

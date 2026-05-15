@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections;
 using Cysharp.Threading.Tasks;
-using GameFramework.Core.Framework;
+using OhMyPackage.Core.Framework;
 using UnityEngine;
 using UnityEngine.Internal;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public static partial class Utility
     {

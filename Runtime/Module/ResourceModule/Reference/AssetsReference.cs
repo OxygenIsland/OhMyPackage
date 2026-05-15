@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using GameFramework.Core.Framework;
+using OhMyPackage.Core.Framework;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace GameFramework.Resource
+namespace OhMyPackage.Resource
 {
     [Serializable]
     public struct AssetsRefInfo
@@ -48,7 +48,7 @@ namespace GameFramework.Resource
 
             if (_resourceModule == null)
             {
-                throw new GameFrameworkException($"resourceModule is null.");
+                throw new OhMyPackageException($"resourceModule is null.");
             }
         }
 
@@ -118,12 +118,12 @@ namespace GameFramework.Resource
         {
             if (source == null)
             {
-                throw new GameFrameworkException($"Source gameObject is null.");
+                throw new OhMyPackageException($"Source gameObject is null.");
             }
 
             if (source.scene.name != null)
             {
-                throw new GameFrameworkException($"Source gameObject is in scene.");
+                throw new OhMyPackageException($"Source gameObject is in scene.");
             }
 
             _resourceModule = resourceModule;
@@ -138,7 +138,7 @@ namespace GameFramework.Resource
         {
             if (source == null)
             {
-                throw new GameFrameworkException($"Source gameObject is null.");
+                throw new OhMyPackageException($"Source gameObject is null.");
             }
 
             _resourceModule = resourceModule;
@@ -155,12 +155,12 @@ namespace GameFramework.Resource
         {
             if (source == null)
             {
-                throw new GameFrameworkException($"Source gameObject is null.");
+                throw new OhMyPackageException($"Source gameObject is null.");
             }
 
             if (source.scene.name != null)
             {
-                throw new GameFrameworkException($"Source gameObject is in scene.");
+                throw new OhMyPackageException($"Source gameObject is in scene.");
             }
 
             GameObject instance = Object.Instantiate(source, parent);
@@ -171,12 +171,12 @@ namespace GameFramework.Resource
         {
             if (source == null)
             {
-                throw new GameFrameworkException($"Source gameObject is null.");
+                throw new OhMyPackageException($"Source gameObject is null.");
             }
 
             if (source.scene.name != null)
             {
-                throw new GameFrameworkException($"Source gameObject is in scene.");
+                throw new OhMyPackageException($"Source gameObject is in scene.");
             }
 
             var comp = instance.GetComponent<AssetsReference>();
@@ -187,7 +187,7 @@ namespace GameFramework.Resource
         {
             if (source == null)
             {
-                throw new GameFrameworkException($"Source gameObject is null.");
+                throw new OhMyPackageException($"Source gameObject is null.");
             }
 
             var comp = instance.GetComponent<AssetsReference>();

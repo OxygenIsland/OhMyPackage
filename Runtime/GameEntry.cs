@@ -8,7 +8,7 @@
 //
 // 非职责：
 //  · 不直接创建流程 FSM
-//  · 不直接驱动 GameFramework.Update
+//  · 不直接驱动 OhMyPackage.Update
 //  · 不直接负责容器中服务的启动与销毁
 //
 // 标准版架构：
@@ -19,7 +19,7 @@
 
 using UnityEngine;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 启动桥接器。

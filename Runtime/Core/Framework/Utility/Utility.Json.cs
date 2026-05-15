@@ -1,13 +1,13 @@
 ﻿//------------------------------------------------------------
 // Game Framework
 // Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
+// Homepage: https://OhMyPackage.cn/
+// Feedback: mailto:ellan@OhMyPackage.cn
 //------------------------------------------------------------
 
 using System;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public static partial class Utility
     {
@@ -36,7 +36,7 @@ namespace GameFramework
             {
                 if (s_JsonHelper == null)
                 {
-                    throw new GameFrameworkException("JSON helper is invalid.");
+                    throw new OhMyPackageException("JSON helper is invalid.");
                 }
 
                 try
@@ -45,12 +45,12 @@ namespace GameFramework
                 }
                 catch (Exception exception)
                 {
-                    if (exception is GameFrameworkException)
+                    if (exception is OhMyPackageException)
                     {
                         throw;
                     }
 
-                    throw new GameFrameworkException(Text.Format("Can not convert to JSON with exception '{0}'.", exception), exception);
+                    throw new OhMyPackageException(Text.Format("Can not convert to JSON with exception '{0}'.", exception), exception);
                 }
             }
 
@@ -64,7 +64,7 @@ namespace GameFramework
             {
                 if (s_JsonHelper == null)
                 {
-                    throw new GameFrameworkException("JSON helper is invalid.");
+                    throw new OhMyPackageException("JSON helper is invalid.");
                 }
 
                 try
@@ -73,12 +73,12 @@ namespace GameFramework
                 }
                 catch (Exception exception)
                 {
-                    if (exception is GameFrameworkException)
+                    if (exception is OhMyPackageException)
                     {
                         throw;
                     }
 
-                    throw new GameFrameworkException(Text.Format("Can not convert to object with exception '{0}'.", exception), exception);
+                    throw new OhMyPackageException(Text.Format("Can not convert to object with exception '{0}'.", exception), exception);
                 }
             }
 
@@ -92,12 +92,12 @@ namespace GameFramework
             {
                 if (s_JsonHelper == null)
                 {
-                    throw new GameFrameworkException("JSON helper is invalid.");
+                    throw new OhMyPackageException("JSON helper is invalid.");
                 }
 
                 if (objectType == null)
                 {
-                    throw new GameFrameworkException("Object type is invalid.");
+                    throw new OhMyPackageException("Object type is invalid.");
                 }
 
                 try
@@ -106,12 +106,12 @@ namespace GameFramework
                 }
                 catch (Exception exception)
                 {
-                    if (exception is GameFrameworkException)
+                    if (exception is OhMyPackageException)
                     {
                         throw;
                     }
 
-                    throw new GameFrameworkException(Text.Format("Can not convert to object with exception '{0}'.", exception), exception);
+                    throw new OhMyPackageException(Text.Format("Can not convert to object with exception '{0}'.", exception), exception);
                 }
             }
         }

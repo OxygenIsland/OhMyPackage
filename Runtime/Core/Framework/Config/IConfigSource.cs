@@ -1,7 +1,7 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 配置数据源策略接口。

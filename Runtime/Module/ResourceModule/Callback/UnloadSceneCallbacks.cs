@@ -1,4 +1,4 @@
-﻿namespace GameFramework.Resource
+﻿namespace OhMyPackage.Resource
 {
     /// <summary>
     /// 卸载场景回调函数集。
@@ -26,7 +26,7 @@
         {
             if (unloadSceneSuccessCallback == null)
             {
-                throw new GameFrameworkException("Unload scene success callback is invalid.");
+                throw new OhMyPackageException("Unload scene success callback is invalid.");
             }
 
             _unloadSceneSuccessCallback = unloadSceneSuccessCallback;

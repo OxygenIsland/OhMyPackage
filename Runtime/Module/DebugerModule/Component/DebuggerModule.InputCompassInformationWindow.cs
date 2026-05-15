@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public sealed partial class Debugger
     {

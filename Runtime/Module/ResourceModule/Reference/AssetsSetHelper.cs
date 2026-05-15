@@ -1,8 +1,8 @@
-﻿using GameFramework.Core.Framework;
+﻿using OhMyPackage.Core.Framework;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace GameFramework.Resource
+namespace OhMyPackage.Resource
 {
     public static class AssetsSetHelper
     {
@@ -22,7 +22,7 @@ namespace GameFramework.Resource
         {
             if (image == null)
             {
-                throw new GameFrameworkException($"SetSprite failed. Because image is null.");
+                throw new OhMyPackageException($"SetSprite failed. Because image is null.");
             }
 
             CheckResourceManager();
@@ -54,7 +54,7 @@ namespace GameFramework.Resource
         {
             if (spriteRenderer == null)
             {
-                throw new GameFrameworkException($"SetSprite failed. Because image is null.");
+                throw new OhMyPackageException($"SetSprite failed. Because image is null.");
             }
 
             CheckResourceManager();
@@ -86,7 +86,7 @@ namespace GameFramework.Resource
         {
             if (meshRenderer == null)
             {
-                throw new GameFrameworkException($"SetSprite failed. Because image is null.");
+                throw new OhMyPackageException($"SetSprite failed. Because image is null.");
             }
 
             CheckResourceManager();
@@ -118,7 +118,7 @@ namespace GameFramework.Resource
         {
             if (meshRenderer == null)
             {
-                throw new GameFrameworkException($"SetSprite failed. Because image is null.");
+                throw new OhMyPackageException($"SetSprite failed. Because image is null.");
             }
 
             CheckResourceManager();

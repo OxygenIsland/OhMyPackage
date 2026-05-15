@@ -1,13 +1,13 @@
 ﻿//------------------------------------------------------------
 // Game Framework
 // Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
+// Homepage: https://OhMyPackage.cn/
+// Feedback: mailto:ellan@OhMyPackage.cn
 //------------------------------------------------------------
 
 using System;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public static partial class Utility
     {
@@ -108,18 +108,18 @@ namespace GameFramework
 
                 if (code == null)
                 {
-                    throw new GameFrameworkException("Code is invalid.");
+                    throw new OhMyPackageException("Code is invalid.");
                 }
 
                 int codeLength = code.Length;
                 if (codeLength <= 0)
                 {
-                    throw new GameFrameworkException("Code length is invalid.");
+                    throw new OhMyPackageException("Code length is invalid.");
                 }
 
                 if (startIndex < 0 || length < 0 || startIndex + length > bytes.Length)
                 {
-                    throw new GameFrameworkException("Start index or length is invalid.");
+                    throw new OhMyPackageException("Start index or length is invalid.");
                 }
 
                 int codeIndex = startIndex % codeLength;

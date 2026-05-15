@@ -6,7 +6,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public static partial class Utility
     {

@@ -2,7 +2,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using MyGame.Toolkit.Network;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 可注入的日志上报门面，内部统一通过 IWebRequestService 发起上传。

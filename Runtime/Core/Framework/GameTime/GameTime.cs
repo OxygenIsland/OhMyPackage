@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 // ReSharper disable InconsistentNaming
-namespace GameFramework
+namespace OhMyPackage
 {
     /// <summary>
     /// 游戏时间。

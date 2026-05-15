@@ -1,8 +1,8 @@
-﻿using GameFramework.Core.Framework;
-using GameFramework.Procedure;
+﻿using OhMyPackage.Core.Framework;
+using OhMyPackage.Procedure;
 using UnityEngine;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public class Settings : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GameFramework.ObjectPool
+namespace OhMyPackage.ObjectPool
 {
     /// <summary>
     /// 释放对象筛选函数。

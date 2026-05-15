@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameFramework
+namespace OhMyPackage
 {
     public sealed partial class Debugger
     {

@@ -1,7 +1,7 @@
 // -------------------------------------------------------
 // MyGame — Download Module (Modern / UniTask)
 // -------------------------------------------------------
-namespace GameFramework.Download
+namespace OhMyPackage.Download
 {
     /// <summary>
     /// 单次下载的最终结果（只读值类型）。

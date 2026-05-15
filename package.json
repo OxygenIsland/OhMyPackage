@@ -1,0 +1,22 @@
+{
+  "name": "com.albert.ohmypackage",
+  "version": "0.1.0",
+  "displayName": "OhMyPackage",
+  "description": "A custom Unity package.",
+  "unity": "6000.0",
+  "documentationUrl": "",
+  "changelogUrl": "",
+  "licensesUrl": "",
+  "dependencies": {
+    "com.cysharp.r3": "https://github.com/Cysharp/R3.git?path=src/R3.Unity/Assets/R3.Unity",
+    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+    "jp.hadashikick.vcontainer": "1.17.0",
+    "com.tuyoogame.yooasset": "2.3.18"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Albert",
+    "email": "",
+    "url": ""
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "OhMyPackage.Editor",
+  "rootNamespace": "OhMyPackage.Editor",
+  "references": [
+    "OhMyPackage.Runtime",
+    "R3",
+    "UniTask",
+    "VContainer",
+    "YooAsset"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

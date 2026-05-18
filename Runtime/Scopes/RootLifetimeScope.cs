@@ -16,15 +16,13 @@
 //    └── SceneLifetimeScope (可选，各场景独立子容器)
 // ===================================================================
 
-using OhMyPackage;
-using OhMyPackage.Event;
 using OhMyPackage.Fsm;
 using OhMyPackage.Procedure;
-using MyGame.Scopes.Installers;
+using OhMyPackage.Scopes.Installers;
 using VContainer;
 using VContainer.Unity;
 
-namespace OhMyPackage
+namespace OhMyPackage.Scopes
 {
     /// <summary>
     /// 根级生命周期作用域（全局唯一）
@@ -37,14 +35,8 @@ namespace OhMyPackage
             // ── 框架核心模块（Singleton）────────────────────────────────
             // 使用工厂委托包装 OhMyPackageEntry 的懒加载机制
             // VContainer 保证每个接口在容器生命周期内只实例化一次
-            builder.Register<IFsmManager>(
-                _ => OhMyPackageEntry.GetModule<IFsmManager>(),
-                Lifetime.Singleton);
-
-
-            builder.Register<IProcedureManager>(
-                _ => OhMyPackageEntry.GetModule<IProcedureManager>(),
-                Lifetime.Singleton);
+            builder.Register<IFsmManager, FsmModule>(Lifetime.Singleton);
+            builder.Register<IProcedureManager, ProcedureManager>(Lifetime.Singleton);
 
             // ── Toolkit 基础设施模块 ───────────────────────────────────
             new ToolkitInstaller().Install(builder);
@@ -53,7 +45,7 @@ namespace OhMyPackage
             new ConfigInstaller().Install(builder);
 
             // ── 注入场景中已存在的 MonoBehaviour ──────────────────────
-            // GameEntry 仅作为 Unity 桥接器存在，不再是 FSM Owner。
+            // GameEntry 仅作为 Unity 桥接器存在。
             builder.RegisterComponentInHierarchy<GameEntry>();
 
             // ── Runtime 日志上报门面 ───────────────────────────────────

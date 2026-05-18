@@ -147,7 +147,7 @@ namespace OhMyPackage
             {
             }
 
-            public void OnUpdate(float elapseSeconds, float realElapseSeconds)
+            public void OnUpdate()
             {
                 if (_lastLockScroll != lockScroll)
                 {

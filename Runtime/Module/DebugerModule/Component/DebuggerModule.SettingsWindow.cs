@@ -37,7 +37,7 @@ namespace OhMyPackage
                 _debugger.WindowRect = new Rect(_lastWindowX, _lastWindowY, _lastWindowWidth, _lastWindowHeight);
             }
 
-            public override void OnUpdate(float elapseSeconds, float realElapseSeconds)
+            public override void OnUpdate()
             {
                 if (Math.Abs(_lastIconX - _debugger.IconRect.x) > 0.01f)
                 {

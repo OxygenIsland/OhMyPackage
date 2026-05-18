@@ -97,9 +97,9 @@ namespace OhMyPackage
             /// </summary>
             /// <param name="elapseSeconds">逻辑流逝时间，以秒为单位。</param>
             /// <param name="realElapseSeconds">真实流逝时间，以秒为单位。</param>
-            public void OnUpdate(float elapseSeconds, float realElapseSeconds)
+            public void OnUpdate()
             {
-                SelectedWindow.OnUpdate(elapseSeconds, realElapseSeconds);
+                SelectedWindow.OnUpdate();
             }
 
             /// <summary>

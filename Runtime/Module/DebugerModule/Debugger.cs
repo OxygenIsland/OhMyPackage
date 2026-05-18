@@ -145,6 +145,15 @@ namespace OhMyPackage
         private GameObject _eventSystem;
 
         /// <summary>
+        /// VContainer 注入入口（MonoBehaviour 不走构造函数，需使用 [Inject] 方法注入）。
+        /// </summary>
+        [VContainer.Inject]
+        public void Construct(IDebuggerModule debuggerModule)
+        {
+            _debuggerModule = debuggerModule;
+        }
+
+        /// <summary>
         /// 游戏框架模块初始化。
         /// </summary>
         void Awake()
@@ -162,7 +171,6 @@ namespace OhMyPackage
 
         private void Initialize()
         {
-            _debuggerModule = ModuleSystem.GetModule<IDebuggerModule>();
             if (_debuggerModule == null)
             {
                 Log.Fatal("Debugger manager is invalid.");

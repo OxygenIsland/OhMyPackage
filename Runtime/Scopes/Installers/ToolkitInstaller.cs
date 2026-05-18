@@ -4,7 +4,7 @@ using MyGame.Toolkit.Network;
 using VContainer;
 using VContainer.Unity;
 
-namespace MyGame.Scopes.Installers
+namespace OhMyPackage.Scopes.Installers
 {
     /// <summary>
     /// 注册 Toolkit 层的所有基础设施服务（DiskCache、Network、IO 等）。
@@ -41,6 +41,13 @@ namespace MyGame.Scopes.Installers
             // IWebRequestService → WebRequestService（并发调度 + 优先级 + 取消管理）
             // 容器销毁时自动调用 Dispose() 触发 CancelAll()。
             builder.Register<IWebRequestService, WebRequestService>(Lifetime.Singleton);
+
+            // ── 其他 Toolkit 基础设施服务（如有）────────────────────────────
+            // RegisterEntryPoint<T>().As<I>() 是 VContainer 的行业标准写法：
+            //   · 容器驱动 ITickable.Tick() 和 IDisposable.Dispose()
+            //   · 同一实例同时以 IDebuggerModule 暴露给所有注入方
+            //   · 不需要额外的 Register 或工厂，无多实例风险
+            builder.RegisterEntryPoint<DebuggerModule>().As<IDebuggerModule>();
         }
     }
 }

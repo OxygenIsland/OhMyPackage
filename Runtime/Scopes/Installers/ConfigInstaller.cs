@@ -2,7 +2,7 @@ using OhMyPackage;
 using VContainer;
 using VContainer.Unity;
 
-namespace MyGame.Scopes.Installers
+namespace OhMyPackage.Scopes.Installers
 {
     /// <summary>
     /// 向 VContainer 注册 Config 模块服务。

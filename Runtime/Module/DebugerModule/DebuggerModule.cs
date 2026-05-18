@@ -1,30 +1,20 @@
-﻿using OhMyPackage.Core.Framework;
+﻿using System;
 using UnityEngine;
+using VContainer.Unity;
 
 namespace OhMyPackage
 {
     /// <summary>
     /// 调试器管理器。
+    /// new DebuggerWindowGroup() 无外部依赖，字段初始化即可，无需 IStartable。
+    /// ITickable  → 需要 RegisterEntryPoint 才会被容器驱动每帧调用。
+    /// IDisposable → 无需 EntryPoint，容器销毁时自动调用。
     /// </summary>
-    internal sealed partial class DebuggerModule : Module, IDebuggerModule, IUpdateModule
+    internal sealed partial class DebuggerModule : IDebuggerModule, ITickable, IDisposable
     {
-        private DebuggerWindowGroup _debuggerWindowRoot;
+        // 无外部依赖 → 字段初始化，构造完成即可用，不需要 IStartable
+        private readonly DebuggerWindowGroup _debuggerWindowRoot = new DebuggerWindowGroup();
         private bool _activeWindow;
-
-        /// <summary>
-        /// 初始化调试器管理器的新实例。
-        /// </summary>
-        public override void OnInit()
-        {
-            _debuggerWindowRoot = new DebuggerWindowGroup();
-            _activeWindow = false;
-        }
-
-        /// <summary>
-        /// 获取游戏框架模块优先级。
-        /// </summary>
-        /// <remarks>优先级较高的模块会优先轮询，并且关闭操作会后进行。</remarks>
-        public override int Priority => -1;
 
         /// <summary>
         /// 获取或设置调试器窗口是否激活。
@@ -43,20 +33,20 @@ namespace OhMyPackage
         /// <summary>
         /// 调试器管理器轮询。
         /// </summary>
-        public void Update(float elapseSeconds, float realElapseSeconds)
+        public void Tick()
         {
             if (!_activeWindow)
             {
                 return;
             }
 
-            _debuggerWindowRoot.OnUpdate(elapseSeconds, realElapseSeconds);
+            _debuggerWindowRoot.OnUpdate();
         }
 
         /// <summary>
         /// 关闭并清理调试器管理器。
         /// </summary>
-        public override void Shutdown()
+        public void Dispose()
         {
             _activeWindow = false;
             _debuggerWindowRoot.Shutdown();

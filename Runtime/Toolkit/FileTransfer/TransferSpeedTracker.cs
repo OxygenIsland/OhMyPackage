@@ -6,11 +6,12 @@ using System.Diagnostics;
 
 namespace OhMyPackage.Download
 {
+
     /// <summary>
-    /// 滑动时间窗口下载速度计算器（线程安全）。
-    /// 通过记录每次收到数据的时间戳，计算最近 N 秒内的平均速度。
+    /// 滑动时间窗口传输速度计算器（线程安全）。
+    /// 通用于上传和下载速度统计。
     /// </summary>
-    internal sealed class DownloadSpeedTracker
+    internal sealed class TransferSpeedTracker
     {
         private readonly float _windowSeconds;
         private readonly LinkedList<(long timestampMs, long bytes)> _samples;
@@ -18,11 +19,11 @@ namespace OhMyPackage.Download
         private readonly object _lock = new object();
         private long _windowBytes;
 
-        /// <summary>当前计算出的下载速度（bytes/s）。</summary>
+        /// <summary>当前计算出的传输速度（bytes/s）。</summary>
         public float CurrentSpeed { get; private set; }
 
         /// <param name="windowSeconds">滑动窗口大小（秒）。默认 3 秒。</param>
-        public DownloadSpeedTracker(float windowSeconds = 3f)
+        public TransferSpeedTracker(float windowSeconds = 3f)
         {
             _windowSeconds = windowSeconds;
             _samples       = new LinkedList<(long, long)>();

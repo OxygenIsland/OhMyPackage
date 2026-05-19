@@ -97,7 +97,7 @@ namespace OhMyPackage.Procedure
                 return;
             }
 
-            _procedureModule.Initialize(ModuleSystem.GetModule<FsmModule>(), procedures);
+            _procedureModule.Initialize(ModuleSystem.GetModule<FsmManager>(), procedures);
 
             await UniTask.Yield();
 

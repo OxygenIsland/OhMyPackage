@@ -35,7 +35,7 @@ namespace OhMyPackage.Scopes
             // ── 框架核心模块（Singleton）────────────────────────────────
             // 使用工厂委托包装 OhMyPackageEntry 的懒加载机制
             // VContainer 保证每个接口在容器生命周期内只实例化一次
-            builder.Register<IFsmManager, FsmModule>(Lifetime.Singleton);
+            builder.Register<IFsmManager, FsmManager>(Lifetime.Singleton);
             builder.Register<IProcedureManager, ProcedureManager>(Lifetime.Singleton);
 
             // ── Toolkit 基础设施模块 ───────────────────────────────────

@@ -429,9 +429,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2052333401}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3717680bd788d6449a9c817ac3a988ed, type: 3}
+  m_Script: {fileID: 11500000, guid: c5efe4f4cb81a234fae33f6a121951a2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: OhMyPackage.Runtime::OhMyPackage.Scopes.RootLifetimeScope
+  m_EditorClassIdentifier: OhMyPackage.Runtime::OhMyPackage.Scopes.TestSceneLifetimeScope
   parentReference:
     TypeName: 
   autoRun: 1

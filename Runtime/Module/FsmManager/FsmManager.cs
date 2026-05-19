@@ -1,31 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using OhMyPackage.Core.Framework;
 
 namespace OhMyPackage.Fsm
 {
     /// <summary>
     /// 有限状态机管理器。
     /// </summary>
-    internal sealed class FsmModule : Module, IFsmManager, IUpdateModule
+    internal sealed class FsmManager :  IFsmManager, IDisposable
     {
-        private readonly Dictionary<TypeNamePair, FsmBase> _fsmMap;
-        private readonly List<FsmBase> _tempFsmList;
+        private readonly Dictionary<TypeNamePair, FsmBase> _fsmMap = new Dictionary<TypeNamePair, FsmBase>();
+        private readonly List<FsmBase> _tempFsmList = new List<FsmBase>();
 
-        /// <summary>
-        /// 初始化有限状态机管理器的新实例。
-        /// </summary>
-        public FsmModule()
-        {
-            _fsmMap = new Dictionary<TypeNamePair, FsmBase>();
-            _tempFsmList = new List<FsmBase>();
-        }
-
-        /// <summary>
-        /// 获取游戏框架模块优先级。
-        /// </summary>
-        /// <remarks>优先级较高的模块会优先轮询，并且关闭操作会后进行。</remarks>
-        public override int Priority => 1;
 
         /// <summary>
         /// 获取有限状态机数量。
@@ -61,14 +46,11 @@ namespace OhMyPackage.Fsm
             }
         }
 
-        public override void OnInit()
-        {
-        }
 
         /// <summary>
         /// 关闭并清理有限状态机管理器。
         /// </summary>
-        public override void Shutdown()
+        public void Dispose()
         {
             foreach (KeyValuePair<TypeNamePair, FsmBase> fsm in _fsmMap)
             {

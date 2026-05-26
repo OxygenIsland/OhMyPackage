@@ -336,7 +336,7 @@ namespace OhMyPackage.Download
             var downloadCt = downloadCts.Token;
 
             // ② 获取远程文件总大小（HEAD 请求，不携带 Range，结果为完整文件大小）
-            long totalBytes = await _handler.GetContentLengthAsync(uri, downloadCt);
+            long totalBytes = await _downloadHandler.GetContentLengthAsync(uri, downloadCt);
 
             // ③ 断点续传：检查本地已有文件
             long startPosition = 0L;
@@ -374,7 +374,7 @@ namespace OhMyPackage.Download
             }
 
             // ⑤ 执行下载，流式写入 FileStream
-            await _handler.DownloadToStreamAsync(uri, fs, startPosition, OnBytesReceived, downloadCt);
+            await _downloadHandler.DownloadToStreamAsync(uri, fs, startPosition, OnBytesReceived, downloadCt);
 
             // ⑥ 最终 Flush（使用外部 ct，确保 Dispose 时也能完成）
             await fs.FlushAsync(ct);

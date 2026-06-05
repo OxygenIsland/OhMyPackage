@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using MyGame.Toolkit.Network;
 using OhMyPackage.Core.Framework;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -82,6 +83,7 @@ namespace OhMyPackage
         private ObjectPoolInformationWindow _objectPoolInformationWindow = new ObjectPoolInformationWindow();
         private MemoryPoolPoolInformationWindow _memoryPoolPoolInformationWindow = new MemoryPoolPoolInformationWindow();
         private SettingsWindow _settingsWindow = new SettingsWindow();
+        private FeedbackWindow _feedbackWindow = new FeedbackWindow();
 
         private FpsCounter _fpsCounter = null;
 
@@ -147,10 +149,13 @@ namespace OhMyPackage
         /// <summary>
         /// VContainer 注入入口（MonoBehaviour 不走构造函数，需使用 [Inject] 方法注入）。
         /// </summary>
+        private IWebRequestService _webRequestService;
+
         [VContainer.Inject]
-        public void Construct(IDebuggerModule debuggerModule)
+        public void Construct(IDebuggerModule debuggerModule, IWebRequestService webRequestService)
         {
             _debuggerModule = debuggerModule;
+            _webRequestService = webRequestService;
         }
 
         /// <summary>
@@ -223,6 +228,7 @@ namespace OhMyPackage
             RegisterDebuggerWindow("Profiler/Object Pool", _objectPoolInformationWindow);;
             RegisterDebuggerWindow("Profiler/Reference Pool", _memoryPoolPoolInformationWindow);
             RegisterDebuggerWindow("Other/Settings", _settingsWindow);
+            RegisterDebuggerWindow("Feedback", _feedbackWindow, _webRequestService, string.Empty);
 
             switch (activeWindow)
             {

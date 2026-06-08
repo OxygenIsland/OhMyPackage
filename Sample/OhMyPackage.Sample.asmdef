@@ -1,0 +1,17 @@
+{
+    "name": "OhMyPackage.Sample",
+    "rootNamespace": "OhMyPackage.Sample",
+    "references": [
+        "MyGame.Toolkit",
+        "OhMyPackage.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -3,6 +3,7 @@
   "rootNamespace": "OhMyPackage.Editor",
   "references": [
     "OhMyPackage.Runtime",
+    "MyGame.Toolkit",
     "R3",
     "UniTask",
     "VContainer",

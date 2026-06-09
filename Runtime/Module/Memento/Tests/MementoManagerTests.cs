@@ -3,6 +3,7 @@
 //  使用 Unity Test Framework (NUnit) 运行
 //  路径：Assets/Tests/MementoManagerTests.cs
 // ============================================================
+#if UNITY_INCLUDE_TESTS
 using System;
 using NUnit.Framework;
 
@@ -160,3 +161,4 @@ namespace OhMyPackage.MementoManager.Tests
         }
     }
 }
+#endif
